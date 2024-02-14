@@ -1,0 +1,113 @@
+{
+    "basic_info": {
+      "name": "Nicolas Delgado",
+      "titles": [ "Software Engineer", "Back-End Developer", "Full-Stack Developer", "Data Scientist" ],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/Nicky10",
+          "class": "fab fa-github"
+        },
+        {
+          "name": "instagram",
+          "url": "https://www.instagram.com/nicolasdelgado_x/",
+          "class": "fab fa-instagram"
+        }
+      ],
+      "image": "myProfile.jpg"
+    },
+    "skills": {
+      "icons": [
+        {
+          "name": "Python",
+          "class": "devicon-python-plain",
+          "level": "90"
+        },
+        {
+          "name": "Java",
+          "class": "devicon-java-plain",
+          "level": "75"
+        },
+        {
+          "name": "JavaScript",
+          "class": "devicon-javascript-plain",
+          "level": "70"
+        },
+        {
+          "name": "C#",
+          "class": "devicon-csharp-plain",
+          "level": "65"
+        },
+        {
+          "name": "HTML 5",
+          "class": "devicon-html5-plain",
+          "level": "95"
+        },
+        {
+          "name": "CSS 3",
+          "class": "devicon-css3-plain",
+          "level": "95"
+        },
+        {
+          "name": "Bootstrap",
+          "class": "devicon-bootstrap-plain",
+          "level": "85"
+        },
+        {
+          "name": "Express.js",
+          "class": "devicon-express-original",
+          "level": "85"
+        },
+        {
+          "name": "React",
+          "class": "devicon-react-original",
+          "level": "85"
+        },
+        {
+          "name": "Pandas",
+          "class": "devicon-pandas-plain",
+          "level": "85"
+        },
+        {
+          "name": "Selenium",
+          "class": "devicon-selenium-original",
+          "level": "85"
+        },
+        {
+          "name": "Sass",
+          "class": "devicon-sass-original",
+          "level": "75"
+        },
+        {
+          "name": "AWS",
+          "class": "devicon-amazonwebservices-plain-wordmark",
+          "level": "75"
+        },
+        {
+          "name": "Linux",
+          "class": "devicon-linux-plain",
+          "level": "85"
+        },
+        {
+          "name": "MySql",
+          "class": "devicon-mysql-plain",
+          "level": "60"
+        },
+        {
+          "name": "SQL Server",
+          "class": "devicon-microsoftsqlserver-plain",
+          "level": "60"
+        },
+        {
+          "name": "PostgreSQL",
+          "class": "devicon-postgresql-plain",
+          "level": "60"
+        },
+        {
+          "name": "MongoDB",
+          "class": "devicon-mongodb-plain",
+          "level": "80"
+        }
+      ]
+    }
+  }

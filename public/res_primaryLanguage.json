@@ -1,0 +1,309 @@
+{
+    "basic_info": {
+      "description_header": "Hi",
+      "description": "👋 I'm Nicolas Delgado. I am a Dynamic and results-oriented Software Engineer with extensive experience in API development, data pipeline design, and backend systems optimization. I am a lifelong learner, excited about the new technology trends. Thank you for having a look on my portfolio, if you need someone to be part of your business development team, I am your guy! So please feel free to reach me through the contact form below, and let's create something together!",
+      "section_name": {
+        "about": "About me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "certificates": "Certificates",
+        "experience": "Academic and Professional Experience"
+      }
+    },
+    "projects": [
+      {
+        "title": "Cinerama",
+        "startDate": "2023",
+        "description": "The most expanded application I had opportunity to work with, and also my first Full-Stack project. It's a Cinema booking app created with Express.js, React.js, and MongoDB",
+        "images": [
+          "images/portfolio/cinerama/p1.jpg",
+          "images/portfolio/cinerama/p2.jpg"
+        ],
+        "url": "",
+        "technologies": [
+          {
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-express-original",
+            "name": "Express"
+          },
+          {
+            "class": "devicon-mongodb-plain",
+            "name": "MongoDB"
+          }
+        ]
+      },
+      {
+        "title": "Toronto Website",
+        "startDate": "2021",
+        "description": "Personal project for study subject. It's an HTML5, CSS3, and JavaScript website, showing a little bit about Toronto's lifestyle :)",
+        "images": [
+          "images/portfolio/toronto-interactive/p1.jpg",
+          "images/portfolio/toronto-interactive/p2.jpg"
+        ],
+        "url": "https://nicky10.github.io/index.html",
+        "technologies": [
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
+          },
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          }
+        ]
+      },
+      {
+        "title": "Visual Computing",
+        "startDate": "2018",
+        "description": "One of the first apps I was working on my University. My first approach to a Full-Stack Development, Using HTML5, CSS5, the Bootstrap Framework, and JavaScript to create some ilusions. I've learned a lot!",
+        "images": [
+          "images/portfolio/visual-computing/p1.jpg",
+          "images/portfolio/visual-computing/p2.jpg"
+        ],
+        "url": "https://visualcomputing2020.github.io/",
+        "technologies": [
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
+          },
+          {
+            "class": "devicon-bootstrap-plain",
+            "name": "Bootstrap"
+          },
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          }
+        ]
+      }
+    ],
+    "certificates": [
+      {
+        "title": "Improving Deep Neural Networks",
+        "startDate": "2020",
+        "description": "I learnt the best practices to train and develop test sets and analyze bias/variance for building deep learning applications",
+        "images": [
+          "images/portfolio/certificates/cert1.png"
+        ],
+        "url": "https://www.coursera.org/account/accomplishments/certificate/MX7RQUZMZBRJ",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-tensorflow-original",
+            "name": "TensorFlow"
+          }
+        ]
+      },
+      {
+        "title": "Deep Learning Specialization",
+        "startDate": "2020",
+        "description": "I was able to understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology",
+        "images": [
+          "images/portfolio/certificates/cert2.png"
+        ],
+        "url": "https://www.coursera.org/account/accomplishments/certificate/3MPF5HCYFS9T",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-tensorflow-original",
+            "name": "TensorFlow"
+          }
+        ]
+      },
+      {
+        "title": "Structuring Machine Learning Projects",
+        "startDate": "2020",
+        "description": "I leart how to build a successful machine learning project and get to practice decision-making as a machine learning project leader. ",
+        "images": [
+          "images/portfolio/certificates/cert3.png"
+        ],
+        "url": "https://www.coursera.org/account/accomplishments/certificate/Q9AK6UXBVWK8",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-tensorflow-original",
+            "name": "TensorFlow"
+          }
+        ]
+      },
+      {
+        "title": "Data Analysis with Python",
+        "startDate": "2020",
+        "description": "I gained fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language",
+        "images": [
+          "images/portfolio/certificates/cert4.png"
+        ],
+        "url": "https://courses.cognitiveclass.ai/certificates/f2993da74d9c4d47b7bba906bad5dd4a",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-pandas-plain",
+            "name": "Pandas"
+          },
+          {
+            "class": "devicon-numpy-plain",
+            "name": "Numpy"
+          }
+        ]
+      },
+      {
+        "title": "Data Visualization with Python",
+        "startDate": "2020",
+        "description": "This course showed me how to take data that at first glance has little meaning and present that data in a form that makes sense to people. ",
+        "images": [
+          "images/portfolio/certificates/cert5.png"
+        ],
+        "url": "https://courses.cognitiveclass.ai/certificates/19b07d4426e24a319a3b21ea53e599ef",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-pandas-plain",
+            "name": "Pandas"
+          },
+          {
+            "class": "devicon-numpy-plain",
+            "name": "Numpy"
+          },
+          {
+            "class": "devicon-matplotlib-plain",
+            "name": "MatPlotLib"
+          }
+        ]
+      },
+      {
+        "title": "Python 101 for Data Science",
+        "startDate": "2020",
+        "description": "When finishing this course, I was able to write my own Python scripts and perform basic hands-on data analysis using a Jupyter-based lab environment.",
+        "images": [
+          "images/portfolio/certificates/cert6.png"
+        ],
+        "url": "https://courses.cognitiveclass.ai/certificates/d7b466dcb04a4d0aa385f515865444a1",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-pandas-plain",
+            "name": "Pandas"
+          },
+          {
+            "class": "devicon-numpy-plain",
+            "name": "Numpy"
+          },
+          {
+            "class": "devicon-matplotlib-plain",
+            "name": "MatPlotLib"
+          },
+          {
+            "class": "devicon-jupyter-plain",
+            "name": "Jupyter Notebook"
+          }
+        ]
+      }
+    ],
+    
+    "experience": [
+      {
+        "company": "Centennial College",
+        "title": "Software Engineering",
+        "years": "05/2023 - 12/2023",
+        "mainTech": [
+          "Diploma"
+        ],
+        "technologies": [
+          "REST API",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React.js",
+          "Express.js",
+          "Test Driven Development",
+          "Agile Development",
+          "C#",
+          ".Net",
+          "Angular"
+        ]
+      },
+      {
+        "company": "Evergreen College",
+        "title": "Computer System and Network Specialist",
+        "years": "02/2022 - 03/2023",
+        "mainTech": [
+          "Diploma"
+        ],
+        "technologies": [
+          "PowerShell",
+          "TCP/IP",
+          "Windows Server",
+          "Domain Management",
+          "Cyber Security"
+        ]
+      },
+      {
+        "company": "INDRA",
+        "title": "Software Engineer",
+        "years": "06/2021 - 09/2022",
+        "mainTech": [
+          "Full Time Job"
+        ],
+        "technologies": [
+          "Python",
+          "Pandas",
+          "Numpy",
+          "Selenium",
+          "Linux",
+          "SCRUM",
+          "Agile Development", 
+          "Database Management",
+          "JIRA"
+        ]
+      },
+      {
+        "company": "Universidad Nacional de Colombia",
+        "title": "Computer Engineering",
+        "years": "08/2016 - 02/2022",
+        "mainTech": [
+          "Bachelor's Degree"
+        ],
+        "technologies": [
+          "Python",
+          "C++",
+          "C#",
+          "Java",
+          "JavaScript",
+          "CS Fundamentals",
+          "OOP",
+          "Database Management",
+          "Software Architecture",
+          "Machine Learning"
+        ]
+      }
+    ]
+  }
