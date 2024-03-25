@@ -19,7 +19,7 @@
           "images/portfolio/cinerama/p1.jpg",
           "images/portfolio/cinerama/p2.jpg"
         ],
-        "url": "",
+        "url": "https://nicky10.github.io/IndependentCinemaFrontend/",
         "technologies": [
           {
             "class": "devicon-react-plain",

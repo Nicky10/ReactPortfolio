@@ -19,7 +19,7 @@
           "images/portfolio/cinerama/p1.jpg",
           "images/portfolio/cinerama/p2.jpg"
         ],
-        "url": "",
+        "url": "https://nicky10.github.io/IndependentCinemaFrontend/",
         "technologies": [
           {
             "class": "devicon-react-plain",
@@ -111,7 +111,7 @@
       {
         "title": "Deep Learning Specialization",
         "startDate": "2020",
-        "description": "I was able to understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology",
+        "description": "J'ai pu comprendre les capacités, les défis et les conséquences du deep learning et vous préparer à participer au développement d'une technologie d'IA de pointe.",
         "images": [
           "images/portfolio/certificates/cert2.png"
         ],
