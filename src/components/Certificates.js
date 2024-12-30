@@ -29,7 +29,7 @@ class Certificates extends Component {
               <div className="foto" onClick={() => detailsModalShow(certificates)}>
                 <div>
                   <img
-                    src={certificates.images[0]}
+                    src={`${process.env.PUBLIC_URL}/` + certificates.images[0]}
                     alt="certificateImages"
                     height="230"
                     style={{marginBottom: 0, paddingBottom: 0, position: 'relative'}}
