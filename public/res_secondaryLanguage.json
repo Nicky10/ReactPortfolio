@@ -12,6 +12,58 @@
     },
     "projects": [
       {
+        "title": "Immiland App",
+        "startDate": "2024",
+        "description": "Le premier projet auquel j'ai participé en tant que développeur full stack dans un domaine professionnel, gérant postgreSQL, Nest.js, Node.js et Tailwind. J'ai contribué en corrigeant des bugs, en créant et en testant de nouvelles fonctionnalités et en améliorant l'expérience utilisateur.",
+        "images": [
+          "images/portfolio/immilandApp/front-english.png",
+          "images/portfolio/immilandApp/front-french.png"
+        ],
+        "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
+        "technologies": [
+          {
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-tailwindcss-original",
+            "name": "Tailwind"
+          },
+          {
+            "class": "devicon-nestjs-original",
+            "name": "Nest.js"
+          }, 
+          {
+            "class": "devicon-postgresql-plain",
+            "name": "PostgreSQL"
+          }
+        ]
+      },
+      {
+        "title": "Immiland Flow",
+        "startDate": "2024",
+        "description": "Mon premier projet chez Immiland Canada. Il s'agit d'une application Web dans laquelle l'utilisateur peut citer le prix des services d'immigration. J'ai participé principalement aux fonctionnalités front-end ; comme l'amélioration des styles CSS, la réactivité mobile et l'amélioration de l'expérience utilisateur.",
+        "images": [
+          "images/portfolio/flow/flow-english.png",
+          "images/portfolio/flow/flow-french.png"
+        ],
+        "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
+        "technologies": [
+          {
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-tailwindcss-original",
+            "name": "Tailwind"
+          },
+          {
+            "class": "devicon-nestjs-original",
+            "name": "Nest.js"
+          }
+        ]
+      },
+      {
         "title": "Cinerama",
         "startDate": "2023",
         "description": "L'application la plus étendue sur laquelle j'ai eu l'occasion de travailler pendant mon séjour au collège, et aussi mon premier projet Full-Stack. Il s'agit d'une application de réservation de cinéma créée avec Express.js, React.js et MongoDB.",
