@@ -14,7 +14,7 @@
       {
         "title": "Cinerama",
         "startDate": "2023",
-        "description": "L'application la plus étendue sur laquelle j'ai eu l'occasion de travailler, et aussi mon premier projet Full-Stack. Il s'agit d'une application de réservation de cinéma créée avec Express.js, React.js et MongoDB.",
+        "description": "L'application la plus étendue sur laquelle j'ai eu l'occasion de travailler pendant mon séjour au collège, et aussi mon premier projet Full-Stack. Il s'agit d'une application de réservation de cinéma créée avec Express.js, React.js et MongoDB.",
         "images": [
           "images/portfolio/cinerama/p1.jpg",
           "images/portfolio/cinerama/p2.jpg"
@@ -229,6 +229,25 @@
       }
     ],
     "experience": [
+      {
+        "company": "Immiland Canada",
+        "title": "Software Developer",
+        "years": "05/2024 - Current",
+        "mainTech": [
+          "Full Time Job"
+        ],
+        "technologies": [
+          "REST API",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React.js",
+          "Nest.js",
+          "Agile Development",
+          "Google App Scripts",
+          "Python"
+        ]
+      },
       {
         "company": "Centennial College",
         "title": "Software Engineering",
