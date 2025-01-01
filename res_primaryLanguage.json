@@ -14,7 +14,7 @@
       {
         "title": "Cinerama",
         "startDate": "2023",
-        "description": "The most expanded application I had opportunity to work with, and also my first Full-Stack project. It's a Cinema booking app created with Express.js, React.js, and MongoDB",
+        "description": "The most expanded application I had opportunity to work with during my time at college, and also my first Full-Stack project. It's a Cinema booking app created with Express.js, React.js, and MongoDB",
         "images": [
           "images/portfolio/cinerama/p1.jpg",
           "images/portfolio/cinerama/p2.jpg"
@@ -230,6 +230,25 @@
     ],
     
     "experience": [
+      {
+        "company": "Immiland Canada",
+        "title": "Software Developer",
+        "years": "05/2024 - Current",
+        "mainTech": [
+          "Full Time Job"
+        ],
+        "technologies": [
+          "REST API",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React.js",
+          "Nest.js",
+          "Agile Development",
+          "Google App Scripts",
+          "Python"
+        ]
+      },
       {
         "company": "Centennial College",
         "title": "Software Engineering",

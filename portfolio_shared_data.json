@@ -9,9 +9,14 @@
           "class": "fab fa-github"
         },
         {
-          "name": "instagram",
-          "url": "https://www.instagram.com/nicolasdelgado_x/",
-          "class": "fab fa-instagram"
+          "name": "linkedIn",
+          "url": "https://www.linkedin.com/in/nicolas-felipe-delgado/",
+          "class": "fab fa-linkedin"
+        },
+        {
+          "name": "mail",
+          "url": "mailto:nicolas.felipedelgado@gmail.com",
+          "class": "fa fa-envelope"
         }
       ],
       "image": "myProfile.jpg"
