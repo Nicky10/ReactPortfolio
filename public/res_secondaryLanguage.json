@@ -16,8 +16,8 @@
         "startDate": "2024",
         "description": "Une application web full-stack conçue pour évaluer dynamiquement les scores CRS de l'Entrée express. J'ai développé des fonctionnalités telles que la configuration personnalisable du système CRS via le scraping des sources officielles canadiennes, un calculateur de points interactif en React avec Tailwind. J'ai réalisé tout le projet moi-même, en améliorant l'expérience utilisateur, la logique des scores linguistiques, et la synchronisation des données.",
         "images": [
-          "images/portfolio/immilandApp/crs-dashboard.png",
-          "images/portfolio/immilandApp/crs-calculator.png"
+          "images/portfolio/crsCalculator/crs1.png",
+          "images/portfolio/crsCalculator/crs2.png"
         ],
         "url": "https://nicky10.github.io/canada-crs-calculator-suite/",
         "technologies": [
