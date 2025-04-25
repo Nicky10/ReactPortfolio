@@ -12,6 +12,38 @@
     },
     "projects": [
       {
+        "title": "Calculateur CRS et Tableau de Bord Immiland",
+        "startDate": "2024",
+        "description": "Une application web full-stack conçue pour évaluer dynamiquement les scores CRS de l'Entrée express. J'ai développé des fonctionnalités telles que la configuration personnalisable du système CRS via le scraping des sources officielles canadiennes, un calculateur de points interactif en React avec Tailwind. J'ai réalisé tout le projet moi-même, en améliorant l'expérience utilisateur, la logique des scores linguistiques, et la synchronisation des données.",
+        "images": [
+          "images/portfolio/immilandApp/crs-dashboard.png",
+          "images/portfolio/immilandApp/crs-calculator.png"
+        ],
+        "url": "https://nicky10.github.io/canada-crs-calculator-suite/",
+        "technologies": [
+          {
+            "class": "devicon-typescript-plain",
+            "name": "TypeScript"
+          },
+          {
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-tailwindcss-original",
+            "name": "Tailwind"
+          },
+          {
+            "class": "devicon-nodejs-plain",
+            "name": "Node.js"
+          },
+          {
+            "class": "devicon-nestjs-plain",
+            "name": "NestJS"
+          }
+        ]
+      },      
+      {
         "title": "Immiland App",
         "startDate": "2024",
         "description": "Le premier projet auquel j'ai participé en tant que développeur full stack dans un domaine professionnel, gérant postgreSQL, Nest.js, Node.js et Tailwind. J'ai contribué en corrigeant des bugs, en créant et en testant de nouvelles fonctionnalités et en améliorant l'expérience utilisateur.",
