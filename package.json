@@ -51,6 +51,7 @@
   },
   "overrides": {
     "path-to-regexp": "0.1.13",
-    "postcss": "8.5.25"
+    "postcss": "8.5.25",
+    "underscore": "1.13.8"
   }
 }
