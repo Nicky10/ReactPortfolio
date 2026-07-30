@@ -1,55 +1,34 @@
-# Nicolas Delgado — Portfolio
+# Nicolas Delgado
 
-Personal portfolio site for Nicolas Delgado, full-stack software engineer.
+**Full-stack software engineer** · Toronto · ES · EN · FR
 
-Live site: [Nicky10.github.io/ReactPortfolio](https://Nicky10.github.io/ReactPortfolio)
+I design and ship production platforms — TypeScript, NestJS, React/Next.js, payments, automation, and AI-assisted workflows — with a focus on clear UX and systems that hold up under real business complexity.
 
-## Stack
+**Live portfolio → [nicky10.github.io/ReactPortfolio](https://nicky10.github.io/ReactPortfolio)**
 
-- React 16 (Create React App)
-- Sass
-- Bootstrap / React Bootstrap (modals, badges)
-- Content driven by JSON (`public/res_primaryLanguage.json`, `public/res_secondaryLanguage.json`, `public/portfolio_shared_data.json`)
-- English / French UI toggle
+---
 
-## Featured work
+## Selected work
 
-- [Immiland Sign](https://immiland-sign-384917653933.us-central1.run.app/) — multi-tenant e-signature platform
-- [PIE Placement Test](https://app.planetaimmilandeducation.com/) — language placement exams & scoring
-- [Affiliate Agency Hub](https://affiliates-pie-615391055837.us-central1.run.app/) — partner portal for agencies
-- [Immiland Foundation](https://immilandfoundation.com/) — humanitarian missions, donations & transparency
-- [Consultation Booking](https://en.immilandcanada.com/law/revision-previa-a-envio) — Calendly-style scheduling with Stripe & Google Calendar
+| Project | What it is |
+| --- | --- |
+| [Immiland Sign](https://immiland-sign-384917653933.us-central1.run.app/) | Multi-tenant e-signature platform — templates, workflows, audit trails, Stripe Connect |
+| [PIE Placement](https://app.planetaimmilandeducation.com/) | Language placement exams with FastAPI / scikit-learn scoring |
+| [Affiliate Hub](https://affiliates-pie-615391055837.us-central1.run.app/) | Partner portal for agencies — leads, progress, invoicing, Google Sheets + AI helpers |
+| [Immiland Foundation](https://immilandfoundation.com/) | Humanitarian portal — missions, donations, transparency dashboards |
+| [Consultation Booking](https://en.immilandcanada.com/law/revision-previa-a-envio) | Scheduling with Google Calendar sync and Stripe payments |
+| [CRS Calculator](https://en.immilandcanada.com/calculadora-crs) | Express Entry CRS scoring tool used on Immiland’s live site |
 
-## Contact form (Apps Script)
+---
 
-1. Open [Google Apps Script](https://script.google.com) → New project
-2. Paste `apps-script/ContactForm.gs`
-3. Deploy → New deployment → Web app  
-   - Execute as: **Me**  
-   - Who has access: **Anyone**
-4. Copy the Web App URL into `public/portfolio_shared_data.json` → `basic_info.contact_form_endpoint`
-5. Redeploy / refresh the portfolio
+## Stack I work with
 
-The form sends name + email to the script, which emails the visitor a professional intro (EN/FR) with your phone, email, LinkedIn, and GitHub. Replies go to you (`replyTo` + BCC).
+`TypeScript` · `React` · `Next.js` · `NestJS` · `Node.js` · `PostgreSQL` · `Python` · `FastAPI` · `Stripe` · `Firebase` · `Google Cloud` · `Docker` · `Tailwind`
 
-## Develop
+---
 
-```bash
-npm install
-npm start
-```
+## This site
 
-App runs at `http://localhost:3000/ReactPortfolio` (see `homepage` in `package.json`).
+A bilingual (EN / FR) React portfolio with light & dark themes, project deep-dives, experience timeline, and a contact flow that reaches me directly.
 
-## Build & deploy (GitHub Pages)
-
-```bash
-npm run build
-npm run deploy
-```
-
-## Project structure
-
-- `src/components/` — UI sections (Header, About, Projects, Skills, Experience, …)
-- `public/images/portfolio/` — project screenshots
-- `public/*.json` — copy, projects, experience, skills (EN + FR)
+[Resume (PDF)](https://nicky10.github.io/ReactPortfolio/Resume_Nicolas_Delgado.pdf) · [LinkedIn](https://www.linkedin.com/in/nicolas-felipe-delgado/) · [Email](mailto:nicolas.felipedelgado@gmail.com)

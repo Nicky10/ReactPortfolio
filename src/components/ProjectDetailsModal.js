@@ -13,6 +13,7 @@ class ProjectDetailsModal extends Component {
       var title = this.props.data.title;
       var description = this.props.data.description;
       var url = this.props.data.url;
+      var access = this.props.data.access || "public";
       if (this.props.data.technologies) {
         var tech = technologies.map((icons, i) => {
           return (
@@ -42,8 +43,20 @@ class ProjectDetailsModal extends Component {
       }
     }
 
-    const visitLabel =
-      this.props.visitLabel || "Visit live platform";
+    const labels = this.props.visitLabels || {};
+    const visitLive = labels.visit_live || "Visit live platform";
+    const visitCorporate = labels.visit_corporate || "Visit site";
+    const visitCorporateNote =
+      labels.visit_corporate_note ||
+      "Corporate login required — public access is not available.";
+    const visitOffline = labels.visit_offline || "Not currently live";
+    const visitOfflineNote =
+      labels.visit_offline_note ||
+      "This project is no longer publicly available online.";
+
+    const isOffline = access === "offline";
+    const isCorporate = access === "corporate";
+    const canVisit = Boolean(url) && !isOffline;
 
     return (
       <Modal
@@ -88,17 +101,39 @@ class ProjectDetailsModal extends Component {
           </div>
           <div className="col-md-10 mx-auto modal-project-body">
             <h3 className="modal-project-title">{title}</h3>
-            {url ? (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary modal-visit-btn"
-              >
-                <i className="fas fa-external-link-alt" aria-hidden="true"></i>
-                <span>{visitLabel}</span>
-              </a>
+
+            {canVisit ? (
+              <div className="modal-visit">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary modal-visit-btn"
+                >
+                  <i
+                    className={`fas ${
+                      isCorporate ? "fa-lock" : "fa-external-link-alt"
+                    }`}
+                    aria-hidden="true"
+                  ></i>
+                  <span>{isCorporate ? visitCorporate : visitLive}</span>
+                </a>
+                {isCorporate ? (
+                  <p className="modal-visit-note">{visitCorporateNote}</p>
+                ) : null}
+              </div>
             ) : null}
+
+            {isOffline ? (
+              <div className="modal-visit modal-visit--offline">
+                <span className="modal-visit-badge">
+                  <i className="fas fa-unlink" aria-hidden="true"></i>
+                  {visitOffline}
+                </span>
+                <p className="modal-visit-note">{visitOfflineNote}</p>
+              </div>
+            ) : null}
+
             <p className="modal-description">{description}</p>
             <div className="col-md-12 text-center">
               <ul className="list-inline mx-auto">{tech}</ul>

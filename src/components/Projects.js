@@ -92,11 +92,9 @@ class Projects extends Component {
             show={this.state.detailsModalShow}
             onHide={detailsModalClose}
             data={this.state.deps}
-            visitLabel={
-              (this.props.resumeBasicInfo &&
-                this.props.resumeBasicInfo.ui &&
-                this.props.resumeBasicInfo.ui.visit_live) ||
-              "Visit live platform"
+            visitLabels={
+              (this.props.resumeBasicInfo && this.props.resumeBasicInfo.ui) ||
+              {}
             }
           />
         </div>

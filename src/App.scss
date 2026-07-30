@@ -796,27 +796,57 @@ button {
   align-items: center;
 }
 
+.about-photo__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
 .about-photo__frame {
   position: relative;
-  border-radius: 24px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
   overflow: hidden;
-  background: var(--ink);
-  box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at 35% 25%, rgba(20, 184, 166, 0.16), transparent 55%),
+    radial-gradient(circle at 70% 80%, rgba(56, 189, 248, 0.1), transparent 50%),
+    linear-gradient(160deg, #e8eef4 0%, #f1f5f9 45%, #e2e8f0 100%);
+  box-shadow:
+    0 0 0 4px rgba(20, 184, 166, 0.35),
+    0 0 0 10px rgba(20, 184, 166, 0.1),
+    0 22px 50px rgba(11, 18, 32, 0.22);
+}
+
+.about-photo__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+  pointer-events: none;
 }
 
 .about-photo__frame img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 62%;
+  transform: scale(0.94);
+  transform-origin: center bottom;
 }
 
 .about-photo__stack {
   display: flex;
   justify-content: center;
-  gap: 1.6rem;
-  padding: 1.4rem;
+  gap: 1.4rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
   background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(11, 18, 32, 0.16);
 }
 
 .about-copy__hello {
@@ -1336,11 +1366,15 @@ body[data-theme="dark"] .experience-card__achievements {
   color: var(--ink);
 }
 
+.modal-visit {
+  margin: 0 0 1.8rem;
+}
+
 .modal-visit-btn {
   display: inline-flex !important;
   align-items: center;
   gap: 0.8rem;
-  margin: 0 0 1.8rem;
+  margin: 0 !important;
   padding: 1.1rem 1.8rem !important;
   font-size: 1.45rem !important;
   text-decoration: none !important;
@@ -1349,6 +1383,35 @@ body[data-theme="dark"] .experience-card__achievements {
 
 .modal-visit-btn i {
   font-size: 1.3rem;
+}
+
+.modal-visit-note {
+  margin: 0.9rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.modal-visit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.modal-visit-badge i {
+  color: var(--muted);
+}
+
+.modal-visit--offline .modal-visit-note {
+  margin-top: 0.85rem;
 }
 
 .modal-description {
@@ -1551,6 +1614,11 @@ body[data-theme="dark"] .modal-project-title {
 
 body[data-theme="dark"] .modal-description {
   color: #94a3b8;
+}
+
+body[data-theme="dark"] .modal-visit-badge {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
 }
 
 body[data-theme="dark"] .contact-modal__panel {
@@ -1958,6 +2026,11 @@ body[data-theme="light"] .click-burst__particle {
   .about-photo {
     max-width: 260px;
     margin: 0 auto;
+  }
+
+  .about-photo__frame {
+    width: 240px;
+    height: 240px;
   }
 
   .about-highlights {

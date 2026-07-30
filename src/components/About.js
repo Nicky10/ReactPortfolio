@@ -48,11 +48,13 @@ class About extends Component {
           <div className="about-grid">
             <ScrollReveal className="about-photo" delay={80}>
               <motion.div
-                className="about-photo__frame"
-                whileHover={{ y: -6, rotate: -1.2 }}
+                className="about-photo__wrap"
+                whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
               >
-                <img src={profilepic} alt="Nicolas Delgado" />
+                <div className="about-photo__frame">
+                  <img src={profilepic} alt="Nicolas Delgado" />
+                </div>
                 <div className="about-photo__stack">
                   <Icon icon={reactIcon} style={{ fontSize: "2.4rem" }} />
                   <Icon icon={nodejsIcon} style={{ fontSize: "2.4rem" }} />

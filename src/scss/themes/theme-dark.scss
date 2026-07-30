@@ -170,6 +170,22 @@ body[data-theme="dark"] {
     border-color: var(--line);
   }
 
+  .about-photo__frame {
+    box-shadow:
+      0 0 0 4px rgba(45, 212, 191, 0.35),
+      0 0 0 10px rgba(45, 212, 191, 0.1),
+      0 22px 50px rgba(0, 0, 0, 0.4);
+    background:
+      radial-gradient(circle at 35% 25%, rgba(45, 212, 191, 0.18), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(56, 189, 248, 0.1), transparent 50%),
+      linear-gradient(160deg, #dbe4ee 0%, #e8eef4 45%, #d5dee8 100%);
+  }
+
+  .about-photo__stack {
+    background: rgba(22, 32, 51, 0.95);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
   .about-copy__hello,
   .section-heading,
   .project-card__body h3,
