@@ -1,95 +1,115 @@
 import React, { Component } from "react";
 import Typical from "react-typical";
-import Switch from "react-switch";
+import { motion } from "framer-motion";
+import HeroScene from "./HeroScene";
+import {
+  ThemeToggle,
+  LangToggle,
+  HeroThemeHandoff,
+  HeroLangHandoff,
+} from "./SiteControls";
 
 class Header extends Component {
-  titles = [];
-
-  constructor() {
-    super();
-    this.state = { checked: false };
-    this.onThemeSwitchChange = this.onThemeSwitchChange.bind(this);
+  scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  onThemeSwitchChange(checked) {
-    this.setState({ checked });
-    this.setTheme();
-  }
-
-  setTheme() {
-    var dataThemeAttribute = "data-theme";
-    var body = document.body;
-    var newTheme =
-      body.getAttribute(dataThemeAttribute) === "dark" ? "light" : "dark";
-    body.setAttribute(dataThemeAttribute, newTheme);
+  getTitles() {
+    const fromResume =
+      this.props.resumeBasicInfo && this.props.resumeBasicInfo.titles;
+    const fromShared =
+      this.props.sharedData && this.props.sharedData.titles;
+    const titles = fromResume || fromShared || [];
+    return titles.map((x) => [x.toUpperCase(), 1800]).flat();
   }
 
   render() {
-    if (this.props.sharedData) {
-      var name = this.props.sharedData.name;
-      this.titles = this.props.sharedData.titles.map(x => [ x.toUpperCase(), 1500 ] ).flat();
-    }
+    const name =
+      (this.props.sharedData && this.props.sharedData.name) ||
+      "Nicolas Delgado";
+    const ui =
+      (this.props.resumeBasicInfo && this.props.resumeBasicInfo.ui) || {};
+    const hero = ui.hero || {};
+    const titles = this.getTitles();
+    const pinned = this.props.controlsPinned;
 
-    const HeaderTitleTypeAnimation = React.memo( () => {
-      return <Typical className="title-styles" steps={this.titles} loop={50} />
-    }, (props, prevProp) => true);
+    const HeaderTitleTypeAnimation = React.memo(
+      () => {
+        if (!titles.length) return null;
+        return <Typical className="title-styles" steps={titles} loop={50} />;
+      },
+      () => true
+    );
+
+    const fadeUp = (delay) => ({
+      initial: { opacity: 0, y: 22 },
+      animate: { opacity: 1, y: 0 },
+      transition: {
+        delay,
+        duration: 0.65,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    });
 
     return (
-      <header id="home" style={{ height: window.innerHeight - 140, display: 'block' }}>
-        <div className="row aligner" style={{height: '100%'}}>
-          <div className="col-md-12">
-            <div>
-              <span className="iconify header-icon" data-icon="la:laptop-code" data-inline="false"></span>
-              <br/>
-              <h1 className="mb-0">
-                <Typical steps={[name]} wrapper="p" />
-              </h1>
-              <div className="title-container">
-                <HeaderTitleTypeAnimation />
-              </div>
-              <Switch
-                checked={this.state.checked}
-                onChange={this.onThemeSwitchChange}
-                offColor="#baaa80"
-                onColor="#353535"
-                className="react-switch mx-auto"
-                width={90}
-                height={40}
-                uncheckedIcon={
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:owl"
-                    data-inline="false"
-                    style={{
-                      display: "block",
-                      height: "100%",
-                      fontSize: 25,
-                      textAlign: "end",
-                      marginLeft: "20px",
-                      color: "#353239",
-                    }}
-                  ></span>
-                }
-                checkedIcon={
-                  <span
-                    className="iconify"
-                    data-icon="noto-v1:sun-with-face"
-                    data-inline="false"
-                    style={{
-                      display: "block",
-                      height: "100%",
-                      fontSize: 25,
-                      textAlign: "end",
-                      marginLeft: "10px",
-                      color: "#353239",
-                    }}
-                  ></span>
-                }
-                id="icon-switch"
+      <header id="home" className="hero">
+        <HeroScene>
+          <div className="hero__orb hero__orb--one" aria-hidden="true" />
+          <div className="hero__orb hero__orb--two" aria-hidden="true" />
+
+          <div className="hero__content">
+            <motion.p className="hero__eyebrow" {...fadeUp(0.05)}>
+              {hero.eyebrow || "Software Engineer"}
+            </motion.p>
+            <motion.h1 className="hero__name" {...fadeUp(0.15)}>
+              {name}
+            </motion.h1>
+            <motion.div
+              className="hero__roles"
+              key={this.props.language + titles.join("|")}
+              {...fadeUp(0.28)}
+            >
+              <HeaderTitleTypeAnimation />
+            </motion.div>
+            <motion.p className="hero__lead" {...fadeUp(0.4)}>
+              {hero.lead}
+            </motion.p>
+
+            <HeroThemeHandoff pinned={pinned}>
+              <ThemeToggle
+                isDark={this.props.isDark}
+                onThemeChange={this.props.onThemeChange}
+                labels={hero}
               />
-            </div>
+            </HeroThemeHandoff>
           </div>
-        </div>
+
+          <div className="hero__bottom">
+            <HeroLangHandoff pinned={pinned}>
+              <LangToggle
+                language={this.props.language}
+                onLanguageChange={this.props.onLanguageChange}
+              />
+            </HeroLangHandoff>
+
+            <motion.button
+              type="button"
+              className="hero__scroll"
+              onClick={() => this.scrollTo("about")}
+              aria-label={hero.scroll || "Scroll to about"}
+              whileHover={{ y: 3, scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
+              animate={{
+                opacity: pinned ? 0 : 1,
+                pointerEvents: pinned ? "none" : "auto",
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <i className="fas fa-chevron-down" aria-hidden="true"></i>
+            </motion.button>
+          </div>
+        </HeroScene>
       </header>
     );
   }

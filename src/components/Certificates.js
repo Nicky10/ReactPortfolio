@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import CertificateDetailsModal from "./CertificateDetailsModal";
+import ScrollReveal from "./ScrollReveal";
+import MotionCard from "./MotionCard";
+import SectionAura from "./SectionAura";
 
 class Certificates extends Component {
   constructor(props) {
@@ -16,46 +19,48 @@ class Certificates extends Component {
     };
 
     let detailsModalClose = () => this.setState({ detailsModalShow: false });
+
     if (this.props.resumeCertificates && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.certificates;
-      var certificates = this.props.resumeCertificates.map(function (certificates) {
+      var certificates = this.props.resumeCertificates.map(function (
+        certificate,
+        index
+      ) {
         return (
-          <div
-            className="col-sm-12 col-md-6 col-lg-4"
-            key={certificates.title}
-            style={{ cursor: "pointer" }}
+          <ScrollReveal
+            key={certificate.title}
+            className="cert-card"
+            delay={index * 50}
           >
-            <span className="portfolio-item d-block">
-              <div className="foto" onClick={() => detailsModalShow(certificates)}>
-                <div>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/` + certificates.images[0]}
-                    alt="certificateImages"
-                    height="230"
-                    style={{marginBottom: 0, paddingBottom: 0, position: 'relative'}}
-                  />
-                  <span className="certificate-date">{certificates.startDate}</span>
-                  <br />
-                  <p className="certificate-title-settings mt-3">
-                    {certificates.title}
-                  </p>
-                </div>
+            <MotionCard
+              className="cert-card__button"
+              onClick={() => detailsModalShow(certificate)}
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/` + certificate.images[0]}
+                alt={certificate.title}
+              />
+              <div className="cert-card__meta">
+                <span>{certificate.startDate}</span>
+                <h3>{certificate.title}</h3>
               </div>
-            </span>
-          </div>
+            </MotionCard>
+          </ScrollReveal>
         );
       });
     }
 
     return (
-      <section id="portfolio">
-        <div className="col-md-12">
-          <h1 className="section-title" style={{ color: "black" }}>
-            <span>{sectionName}</span>
-          </h1>
-          <div className="col-md-12 mx-auto">
-            <div className="row mx-auto">{certificates}</div>
-          </div>
+      <section id="certificates" className="section certificates-section">
+        <SectionAura variant="certs" />
+        <div className="container-narrow">
+          <ScrollReveal>
+            <h2 className="section-heading">
+              <span className="section-heading__index">04</span>
+              {sectionName}
+            </h2>
+          </ScrollReveal>
+          <div className="certs-grid">{certificates}</div>
           <CertificateDetailsModal
             show={this.state.detailsModalShow}
             onHide={detailsModalClose}

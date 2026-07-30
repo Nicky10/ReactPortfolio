@@ -1,107 +1,242 @@
-body[data-theme="dark"] {  
+body[data-theme="dark"] {
+  @import '../src/scss/dark-slider.scss';
 
-   @import '../src/scss/dark-slider.scss';
+  --paper: #0b1220;
+  --paper-2: #121a2a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --ink: #f8fafc;
+  --line: rgba(248, 250, 252, 0.08);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 
-   .slider-tab {
-      background-color: #8C8C8C;
-   }
+  background: var(--paper);
+  color: var(--text);
 
-   .title-styles {
-      color: white;
-   }
+  .language-switcher,
+  .about-section {
+    background:
+      radial-gradient(ellipse 70% 55% at 8% 30%, rgba(20, 184, 166, 0.22), transparent 58%),
+      radial-gradient(ellipse 55% 45% at 95% 75%, rgba(56, 100, 140, 0.16), transparent 55%),
+      linear-gradient(165deg, #08111c 0%, #0c1522 42%, #0e1828 100%);
+  }
 
-   .header-icon {
-      color: #3C342C;
-      opacity: 0.8;
-   }
+  .about-section::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent);
+  }
 
-   .slider-image {
-      border: 5px solid #8C8C8C;
-   }
+  .about-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #0b1728);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-   .language {
-      background-color: #494949;
-   }
+  .projects-section {
+    background:
+      radial-gradient(ellipse 65% 50% at 95% 5%, rgba(56, 189, 248, 0.2), transparent 55%),
+      radial-gradient(ellipse 50% 45% at 5% 90%, rgba(20, 184, 166, 0.14), transparent 52%),
+      linear-gradient(155deg, #0b1728 0%, #101f32 40%, #0e1c2e 100%);
+  }
 
-   .link-href {
-      color: white;
-   }
+  .projects-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 96px;
+    background: linear-gradient(180deg, transparent, #050b12);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-   .project-date {
-      background-color: #918e97;
-      color: white;
-   }
+  .skills-section {
+    background:
+      radial-gradient(ellipse 70% 55% at 90% 8%, rgba(45, 212, 191, 0.26), transparent 52%),
+      radial-gradient(ellipse 55% 50% at 5% 92%, rgba(56, 189, 248, 0.16), transparent 50%),
+      radial-gradient(ellipse 40% 35% at 50% 45%, rgba(15, 118, 110, 0.12), transparent 60%),
+      linear-gradient(155deg, #04090f 0%, #08131c 48%, #0b1824 100%);
+  }
 
-   header {
-      background-color: #494949;
-      h1 {
-         color: white;
-      }
-   }
+  .skills-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #14161c);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-   #about {
-      background-color: #7f7f7f;
-      h1 span {
-         color: white;
-      }
-      .polaroid span {
-         background:  #6d6d6d;
-      }
-      .card {
-         background: #6d6d6d;
-         color: white;
-      }
-   }
+  .certificates-section {
+    background:
+      radial-gradient(ellipse 55% 45% at 8% 12%, rgba(212, 175, 80, 0.12), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 92% 85%, rgba(20, 184, 166, 0.1), transparent 52%),
+      linear-gradient(165deg, #14161c 0%, #181b22 45%, #12151c 100%);
+  }
 
-   #portfolio {
-      background: #5b5b5b;
-      .section-title {
-         color: white !important;
-      }
-      .foto div {
-         background: #6d6d6d;
-      }
-      .project-title-settings {
-         color: white;
-      }
-   }
+  .certificates-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #0b1524);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-   #resume {
-      filter: brightness(80%);
-      background: #5b5b5b;
-      .section-title {
-         color: white !important;
-      }
+  .experience-section {
+    background:
+      radial-gradient(ellipse 55% 50% at 50% 0%, rgba(20, 184, 166, 0.14), transparent 55%),
+      radial-gradient(ellipse 50% 45% at 0% 100%, rgba(56, 100, 160, 0.14), transparent 52%),
+      linear-gradient(175deg, #0b1524 0%, #0f1a2a 42%, #0a1420 100%);
+  }
 
-      .experience-badge {
-         background: #919191 !important;
-         color: white;
-      }
+  .experience-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #060b12);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-      .main-badge {
-         background: #919191 !important;
-      }
+  .site-footer {
+    background:
+      radial-gradient(ellipse 55% 70% at 25% 0%, rgba(20, 184, 166, 0.16), transparent 55%),
+      radial-gradient(ellipse 45% 50% at 90% 100%, rgba(56, 189, 248, 0.08), transparent 50%),
+      linear-gradient(180deg, #060b12 0%, #04080e 100%);
+  }
 
-      .vertical-timeline-element-date {
-         color: white;
-      }
+  .section-aura__grain {
+    mix-blend-mode: soft-light;
+    opacity: 0.28;
+  }
 
-      .vertical-timeline-element-icon {
-         background: #919191 !important;
-      }
-      @media only screen and (max-width: 1169px) { 
-         .vertical-timeline-element-date {
-            color: black;
-         }
-      }
-   }
+  .section-aura__vignette {
+    background: radial-gradient(ellipse at center, transparent 28%, rgba(0, 0, 0, 0.35) 100%);
+  }
 
-   .modal-inside .modal-content {
-      background: #5b5b5b;
-      color: white;
-   }
+  .section-aura__grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  }
 
-   .close-icon {
-      color: white;
-   }
+  .section-aura--about .section-aura__mesh {
+    background:
+      radial-gradient(ellipse 70% 55% at 12% 35%, rgba(20, 184, 166, 0.26), transparent 60%),
+      radial-gradient(ellipse 50% 45% at 88% 70%, rgba(56, 100, 140, 0.18), transparent 55%);
+  }
+
+  .section-aura--projects .section-aura__mesh {
+    background:
+      radial-gradient(ellipse 65% 50% at 92% 12%, rgba(56, 189, 248, 0.24), transparent 58%),
+      radial-gradient(ellipse 55% 45% at 8% 88%, rgba(20, 184, 166, 0.18), transparent 55%);
+  }
+
+  .section-aura--certs .section-aura__mesh {
+    background:
+      radial-gradient(ellipse 60% 50% at 10% 15%, rgba(212, 175, 80, 0.16), transparent 58%),
+      radial-gradient(ellipse 50% 45% at 90% 80%, rgba(20, 184, 166, 0.12), transparent 55%);
+  }
+
+  .section-aura--experience .section-aura__mesh {
+    background:
+      radial-gradient(ellipse 55% 50% at 50% 5%, rgba(20, 184, 166, 0.18), transparent 58%),
+      radial-gradient(ellipse 55% 45% at 5% 90%, rgba(56, 100, 160, 0.18), transparent 55%);
+  }
+
+  .section-aura__spot {
+    opacity: 0.85;
+  }
+
+  .about-highlights div,
+  .project-card__button,
+  .cert-card__button {
+    background: #162033;
+    border-color: var(--line);
+  }
+
+  .about-copy__hello,
+  .section-heading,
+  .project-card__body h3,
+  .cert-card__meta h3 {
+    color: #f8fafc;
+  }
+
+  .project-card__excerpt,
+  .about-copy__body,
+  .section-lead {
+    color: #94a3b8;
+  }
+
+  .about-resume-btn {
+    color: #042f2e;
+    background: var(--accent-bright);
+  }
+
+  .about-resume-btn:hover {
+    background: #5eead4;
+    color: #042f2e;
+  }
+
+  .project-card__more {
+    color: var(--accent-bright);
+  }
+
+  .experience-badge {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .modal-inside .modal-content {
+    background: #162033;
+    color: #e2e8f0;
+  }
+
+  .close-icon {
+    color: #f8fafc;
+  }
+
+  .modal-description {
+    color: #94a3b8;
+  }
+
+  .slider-tab {
+    background-color: #0b1220;
+  }
+
+  .link-href {
+    color: var(--accent-bright);
+  }
+
+  .vertical-timeline-element-content {
+    background: #162033 !important;
+    color: #e2e8f0;
+    box-shadow: none !important;
+  }
+
+  .vertical-timeline-element-date {
+    color: #cbd5e1 !important;
+  }
+
+  @media only screen and (max-width: 1169px) {
+    .vertical-timeline-element-date {
+      color: #cbd5e1 !important;
+    }
+  }
 }

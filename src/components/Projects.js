@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import ProjectDetailsModal from "./ProjectDetailsModal";
+import ScrollReveal from "./ScrollReveal";
+import MotionCard from "./MotionCard";
+import SectionAura from "./SectionAura";
 
 class Projects extends Component {
   constructor(props) {
@@ -16,50 +19,85 @@ class Projects extends Component {
     };
 
     let detailsModalClose = () => this.setState({ detailsModalShow: false });
+
+    var sectionName;
+    var projects;
+    var projectsLead = "";
+
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.projects;
-      var projects = this.props.resumeProjects.map(function (projects) {
+      sectionName = this.props.resumeBasicInfo.section_name.projects;
+      var ui = this.props.resumeBasicInfo.ui || {};
+      projectsLead = ui.projects_lead || "";
+      var featuredLabel = ui.featured || "Featured";
+      var detailsLabel = ui.project_details || "View details";
+      projects = this.props.resumeProjects.map(function (project, index) {
+        const techs = project.technologies || [];
+        const techPreview = techs.map((t) => t.name).join(" · ");
+        const description = project.description || "";
+
         return (
-          <div
-            className="col-sm-12 col-md-6 col-lg-4"
-            key={projects.title}
-            style={{ cursor: "pointer" }}
+          <ScrollReveal
+            key={project.title}
+            className={`project-card ${
+              project.featured ? "project-card--featured" : ""
+            }`}
+            delay={index * 60}
           >
-            <span className="portfolio-item d-block">
-              <div className="foto" onClick={() => detailsModalShow(projects)}>
-                <div>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/` + projects.images[0]}
-                    alt="projectImages"
-                    height="230"
-                    style={{marginBottom: 0, paddingBottom: 0, position: 'relative'}}
-                  />
-                  <span className="project-date">{projects.startDate}</span>
-                  <br />
-                  <p className="project-title-settings mt-3">
-                    {projects.title}
-                  </p>
-                </div>
+            <MotionCard
+              className="project-card__button"
+              onClick={() => detailsModalShow(project)}
+            >
+              <div className="project-card__media">
+                <img
+                  src={`${process.env.PUBLIC_URL}/` + project.images[0]}
+                  alt={project.title}
+                />
+                {project.featured ? (
+                  <span className="project-card__badge">{featuredLabel}</span>
+                ) : null}
               </div>
-            </span>
-          </div>
+              <div className="project-card__body">
+                <span className="project-card__date">{project.startDate}</span>
+                <h3>{project.title}</h3>
+                {techPreview ? (
+                  <p className="project-card__tech">{techPreview}</p>
+                ) : null}
+                <p className="project-card__excerpt">{description}</p>
+                <span className="project-card__more">
+                  {detailsLabel}
+                  <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                </span>
+              </div>
+            </MotionCard>
+          </ScrollReveal>
         );
       });
     }
 
     return (
-      <section id="portfolio">
-        <div className="col-md-12">
-          <h1 className="section-title" style={{ color: "black" }}>
-            <span>{sectionName}</span>
-          </h1>
-          <div className="col-md-12 mx-auto">
-            <div className="row mx-auto">{projects}</div>
-          </div>
+      <section id="portfolio" className="section projects-section">
+        <SectionAura variant="projects" />
+        <div className="container-narrow">
+          <ScrollReveal>
+            <h2 className="section-heading">
+              <span className="section-heading__index">02</span>
+              {sectionName}
+            </h2>
+            <p className="section-lead">{projectsLead}</p>
+          </ScrollReveal>
+
+          <div className="projects-grid">{projects}</div>
+
           <ProjectDetailsModal
             show={this.state.detailsModalShow}
             onHide={detailsModalClose}
             data={this.state.deps}
+            visitLabel={
+              (this.props.resumeBasicInfo &&
+                this.props.resumeBasicInfo.ui &&
+                this.props.resumeBasicInfo.ui.visit_live) ||
+              "Visit live platform"
+            }
           />
         </div>
       </section>

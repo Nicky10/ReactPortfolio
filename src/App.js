@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import { AnimateSharedLayout } from "framer-motion";
 import "./App.scss";
+import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./components/About";
@@ -8,47 +10,74 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Certificates from "./components/Certificates";
+import ContactModal from "./components/ContactModal";
+import ClickBurst from "./components/ClickBurst";
 
 class App extends Component {
-
   constructor(props) {
     super();
     this.state = {
-      foo: "bar",
       resumeData: {},
       sharedData: {},
+      language: window.$primaryLanguage,
+      contactOpen: false,
+      isDark: false,
+      controlsPinned: false,
     };
+    this.openContact = this.openContact.bind(this);
+    this.closeContact = this.closeContact.bind(this);
+    this.onThemeChange = this.onThemeChange.bind(this);
+    this.handleControlsScroll = this.handleControlsScroll.bind(this);
   }
 
-  applyPickedLanguage(pickedLanguage, oppositeLangIconId) {
-    this.swapCurrentlyActiveLanguage(oppositeLangIconId);
+  openContact() {
+    this.setState({ contactOpen: true });
+  }
+
+  closeContact() {
+    this.setState({ contactOpen: false });
+  }
+
+  onThemeChange(isDark) {
+    this.setState({ isDark });
+    document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+  }
+
+  handleControlsScroll() {
+    const about = document.getElementById("about");
+    const threshold = about
+      ? Math.max(about.offsetTop - 160, window.innerHeight * 0.45)
+      : window.innerHeight * 0.55;
+    const controlsPinned = window.scrollY > threshold;
+    if (controlsPinned !== this.state.controlsPinned) {
+      this.setState({ controlsPinned });
+    }
+  }
+
+  applyPickedLanguage(pickedLanguage) {
     document.documentElement.lang = pickedLanguage;
     var resumePath =
-      document.documentElement.lang === window.$primaryLanguage
+      pickedLanguage === window.$primaryLanguage
         ? `res_primaryLanguage.json`
         : `res_secondaryLanguage.json`;
+    this.setState({ language: pickedLanguage });
     this.loadResumeFromPath(resumePath);
-  }
-
-  swapCurrentlyActiveLanguage(oppositeLangIconId) {
-    var pickedLangIconId =
-      oppositeLangIconId === window.$primaryLanguageIconId
-        ? window.$secondaryLanguageIconId
-        : window.$primaryLanguageIconId;
-    document
-      .getElementById(oppositeLangIconId)
-      .removeAttribute("filter", "brightness(40%)");
-    document
-      .getElementById(pickedLangIconId)
-      .setAttribute("filter", "brightness(40%)");
   }
 
   componentDidMount() {
     this.loadSharedData();
-    this.applyPickedLanguage(
-      window.$primaryLanguage,
-      window.$secondaryLanguageIconId
-    );
+    this.applyPickedLanguage(window.$primaryLanguage);
+    document.body.setAttribute("data-theme", "light");
+    window.addEventListener("scroll", this.handleControlsScroll, {
+      passive: true,
+    });
+    window.addEventListener("resize", this.handleControlsScroll);
+    this.handleControlsScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleControlsScroll);
+    window.removeEventListener("resize", this.handleControlsScroll);
   }
 
   loadResumeFromPath(path) {
@@ -60,7 +89,7 @@ class App extends Component {
         this.setState({ resumeData: data });
       }.bind(this),
       error: function (xhr, status, err) {
-        alert(err);
+        console.error(err);
       },
     });
   }
@@ -72,74 +101,88 @@ class App extends Component {
       cache: false,
       success: function (data) {
         this.setState({ sharedData: data });
-        document.title = `${this.state.sharedData.basic_info.name}`;
+        document.title = `${this.state.sharedData.basic_info.name} — Portfolio`;
       }.bind(this),
       error: function (xhr, status, err) {
-        alert(err);
+        console.error(err);
       },
     });
   }
 
   render() {
+    const resumeBasicInfo = this.state.resumeData.basic_info;
+    const ui = (resumeBasicInfo && resumeBasicInfo.ui) || {};
+    const contactEndpoint =
+      (this.state.sharedData.basic_info &&
+        this.state.sharedData.basic_info.contact_form_endpoint) ||
+      "";
+    const resumeHref =
+      this.state.sharedData.basic_info &&
+      this.state.sharedData.basic_info.resume_pdf
+        ? `${process.env.PUBLIC_URL}/${this.state.sharedData.basic_info.resume_pdf}`
+        : "";
+
     return (
-      <div>
-        <Header sharedData={this.state.sharedData.basic_info} />
-        <div className="col-md-12 mx-auto text-center language">
-          <div
-            onClick={() =>
-              this.applyPickedLanguage(
-                window.$primaryLanguage,
-                window.$secondaryLanguageIconId
-              )
-            }
-            style={{ display: "inline" }}
-          >
-            <span
-              className="iconify language-icon mr-5"
-              data-icon="twemoji-flag-for-flag-united-states"
-              data-inline="false"
-              id={window.$primaryLanguageIconId}
-            ></span>
-          </div>
-          <div
-            onClick={() =>
-              this.applyPickedLanguage(
-                window.$secondaryLanguage,
-                window.$primaryLanguageIconId
-              )
-            }
-            style={{ display: "inline" }}
-          >
-            <span
-              className="iconify language-icon"
-              data-icon="twemoji-flag-for-flag-france"
-              data-inline="false"
-              id={window.$secondaryLanguageIconId}
-            ></span>
-          </div>
+      <AnimateSharedLayout type="crossfade">
+        <div className="app-shell">
+          <ClickBurst />
+          <Navbar
+            sharedBasicInfo={this.state.sharedData.basic_info}
+            navLabels={ui.nav}
+            onContactClick={this.openContact}
+            controlsPinned={this.state.controlsPinned}
+            isDark={this.state.isDark}
+            onThemeChange={this.onThemeChange}
+            language={this.state.language}
+            onLanguageChange={(lang) => this.applyPickedLanguage(lang)}
+            resumeHref={resumeHref}
+          />
+          <Header
+            sharedData={this.state.sharedData.basic_info}
+            resumeBasicInfo={resumeBasicInfo}
+            language={this.state.language}
+            onLanguageChange={(lang) => this.applyPickedLanguage(lang)}
+            onContactClick={this.openContact}
+            controlsPinned={this.state.controlsPinned}
+            isDark={this.state.isDark}
+            onThemeChange={this.onThemeChange}
+          />
+
+          <About
+            resumeBasicInfo={resumeBasicInfo}
+            sharedBasicInfo={this.state.sharedData.basic_info}
+          />
+          <Projects
+            resumeProjects={this.state.resumeData.projects}
+            resumeBasicInfo={resumeBasicInfo}
+          />
+          <Skills
+            sharedSkills={this.state.sharedData.skills}
+            resumeBasicInfo={resumeBasicInfo}
+          />
+          <Certificates
+            resumeCertificates={this.state.resumeData.certificates}
+            resumeBasicInfo={resumeBasicInfo}
+          />
+          <Experience
+            resumeExperience={this.state.resumeData.experience}
+            resumeBasicInfo={resumeBasicInfo}
+          />
+          <Footer
+            sharedBasicInfo={this.state.sharedData.basic_info}
+            footerTagline={ui.footer_tagline}
+            onContactClick={this.openContact}
+          />
+
+          <ContactModal
+            show={this.state.contactOpen}
+            onHide={this.closeContact}
+            endpoint={contactEndpoint}
+            labels={ui.contact}
+            language={this.state.language}
+          />
         </div>
-        <About
-          resumeBasicInfo={this.state.resumeData.basic_info}
-          sharedBasicInfo={this.state.sharedData.basic_info}
-        />
-        <Projects
-          resumeProjects={this.state.resumeData.projects}
-          resumeBasicInfo={this.state.resumeData.basic_info}
-        />
-        <Skills
-          sharedSkills={this.state.sharedData.skills}
-          resumeBasicInfo={this.state.resumeData.basic_info}
-        />
-        <Certificates
-          resumeCertificates={this.state.resumeData.certificates}
-          resumeBasicInfo={this.state.resumeData.basic_info}
-        />
-        <Experience
-          resumeExperience={this.state.resumeData.experience}
-          resumeBasicInfo={this.state.resumeData.basic_info}
-        />
-        <Footer sharedBasicInfo={this.state.sharedData.basic_info} />
-      </div>
+      </AnimateSharedLayout>
     );
   }
 }

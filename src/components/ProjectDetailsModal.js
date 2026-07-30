@@ -4,6 +4,7 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+
 class ProjectDetailsModal extends Component {
   render() {
     if (this.props.data) {
@@ -18,7 +19,7 @@ class ProjectDetailsModal extends Component {
             <li className="list-inline-item mx-3" key={i}>
               <span>
                 <div className="text-center">
-                  <i className={icons.class} style={{ fontSize: "300%" }}>
+                  <i className={icons.class} style={{ fontSize: "260%" }}>
                     <p className="text-center" style={{ fontSize: "30%" }}>
                       {icons.name}
                     </p>
@@ -30,13 +31,20 @@ class ProjectDetailsModal extends Component {
         });
         if (this.props.data.images) {
           var img = images.map((elem, i) => {
-            
-            return <div key={i} data-src={`${process.env.PUBLIC_URL}/` + elem} />;
-            
+            return (
+              <div
+                key={i}
+                data-src={`${process.env.PUBLIC_URL}/` + elem}
+              />
+            );
           });
         }
       }
     }
+
+    const visitLabel =
+      this.props.visitLabel || "Visit live platform";
+
     return (
       <Modal
         {...this.props}
@@ -46,10 +54,10 @@ class ProjectDetailsModal extends Component {
         className="modal-inside"
       >
         <span onClick={this.props.onHide} className="modal-close">
-          <i className="fas fa-times fa-3x close-icon"></i>
+          <i className="fas fa-times fa-2x close-icon"></i>
         </span>
         <div className="col-md-12">
-          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px" }}>
+          <div className="col-md-10 mx-auto" style={{ paddingBottom: "40px" }}>
             <div className="slider-tab">
               <span
                 className="iconify slider-iconfiy"
@@ -78,23 +86,19 @@ class ProjectDetailsModal extends Component {
               {img}
             </AwesomeSlider>
           </div>
-          <div className="col-md-10 mx-auto">
-            <h3 style={{ padding: "5px 5px 0 5px" }}>
-              {title}
-              {url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-href"
-                >
-                  <i
-                    className="fas fa-external-link-alt"
-                    style={{ marginLeft: "10px" }}
-                  ></i>
-                </a>
-              ) : null}
-            </h3>
+          <div className="col-md-10 mx-auto modal-project-body">
+            <h3 className="modal-project-title">{title}</h3>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary modal-visit-btn"
+              >
+                <i className="fas fa-external-link-alt" aria-hidden="true"></i>
+                <span>{visitLabel}</span>
+              </a>
+            ) : null}
             <p className="modal-description">{description}</p>
             <div className="col-md-12 text-center">
               <ul className="list-inline mx-auto">{tech}</ul>

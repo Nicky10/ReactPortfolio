@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A120C"/>
+      <stop offset="55%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#1A120C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#FDBA74" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FDBA74" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#glow)"/>
+  <circle cx="980" cy="560" r="180" fill="#FDBA74" opacity="0.08"/>
+  <circle cx="160" cy="140" r="90" fill="#FDBA74" opacity="0.12"/>
+  <rect x="80" y="80" width="140" height="8" rx="4" fill="#FDBA74" opacity="0.7"/>
+  <text x="80" y="280" font-family="Georgia, serif" font-size="58" fill="#F8FAFC" font-weight="700">Immiland Foundation</text>
+  <text x="80" y="350" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#E2E8F0" opacity="0.85">Humanitarian Aid &amp; Transparency Portal</text>
+  <rect x="80" y="420" width="260" height="44" rx="8" fill="#FDBA74" opacity="0.2" stroke="#FDBA74" stroke-width="1.5"/>
+  <text x="100" y="448" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#FDBA74">React · Vite · Stripe · Cloud Run</text>
+</svg>
