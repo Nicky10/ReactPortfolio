@@ -1,413 +1,636 @@
 {
-    "basic_info": {
-      "description_header": "Hi",
-      "description": "👋 I'm Nicolas Delgado. I am a Dynamic and results-oriented Software Engineer with extensive experience in API development, data pipeline design, and backend systems optimization. I am a lifelong learner, excited about the new technology trends. Thank you for having a look on my portfolio, if you need someone to be part of your business development team, I am your guy! So please feel free to reach me through the contact form below, and let's create something together!",
-      "section_name": {
-        "about": "About me",
-        "projects": "Projects",
-        "skills": "Skills",
-        "certificates": "Certificates",
-        "experience": "Academic and Professional Experience"
+  "basic_info": {
+    "description_header": "Hi",
+    "description": "I'm Nicolas Delgado, a dynamic full-stack software engineer based in Toronto. I build and support high-quality technical solutions across product platforms and enterprise environments — from TypeScript/Node.js systems and PostgreSQL/MongoDB data layers to workflow automation, third-party integrations, and AI evaluation work. Experienced in Agile delivery with cross-functional teams, I care about clear UX, reliable APIs, and systems that scale with real business complexity. I work in Spanish, English, and French.",
+    "highlights": [
+      {
+        "value": "3+",
+        "label": "years of professional experience"
+      },
+      {
+        "value": "Full-stack",
+        "label": "product ownership"
+      },
+      {
+        "value": "ES · EN · FR",
+        "label": "trilingual"
       }
+    ],
+    "titles": [
+      "Full-Stack Software Engineer",
+      "NestJS & React Specialist",
+      "Product-Minded Builder"
+    ],
+    "section_name": {
+      "about": "About me",
+      "projects": "Featured work",
+      "skills": "Skills",
+      "certificates": "Certificates",
+      "experience": "Experience & education"
     },
-    "projects": [
-      {
-        "title": "Immiland CRS Calculator & Dashboard",
-        "startDate": "2025",
-        "description": "A full-stack web application designed for evaluating Express Entry CRS scores dynamically. I implemented features such as customizable CRS configuration via web scraping from official Canadian immigration sources, a responsive score calculator in React with Tailwind. I've developed the entire website by myself, focusing on UI/UX improvements, language score logic, and data syncing.",
-        "images": [
-          "images/portfolio/crsCalculator/crs1.png",
-          "images/portfolio/crsCalculator/crs2.png"
-        ],
-        "url": "https://nicky10.github.io/canada-crs-calculator-suite/",
-        "technologies": [
-          {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
-          },
-          {
-            "class": "devicon-react-plain",
-            "name": "React"
-          },
-          {
-            "class": "devicon-tailwindcss-original",
-            "name": "Tailwind"
-          },
-          {
-            "class": "devicon-nodejs-plain",
-            "name": "Node.js"
-          },
-          {
-            "class": "devicon-nestjs-plain",
-            "name": "NestJS"
-          }
-        ]
+    "ui": {
+      "nav": {
+        "about": "About",
+        "work": "Work",
+        "skills": "Skills",
+        "certs": "Certs",
+        "experience": "Experience",
+        "contact": "Contact",
+        "resume": "Resume"
       },
-      
-      {
-        "title": "Immiland App",
-        "startDate": "2024",
-        "description": "This is the first project I've participated in as a full stack developer in a professional environment, handling PostgreSQL, Nest.js, Node.js, and Tailwind. I've contributed by fixing bugs, creating and testing new features, and improving the user experience.",
-        "images": [
-          "images/portfolio/immilandApp/front-english.png",
-          "images/portfolio/immilandApp/front-french.png"
-        ],
-        "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
-        "technologies": [
-          {
-            "class": "devicon-react-plain",
-            "name": "React"
-          },
-          {
-            "class": "devicon-tailwindcss-original",
-            "name": "Tailwind"
-          },
-          {
-            "class": "devicon-nestjs-original",
-            "name": "Nest.js"
-          }, 
-          {
-            "class": "devicon-postgresql-plain",
-            "name": "PostgreSQL"
-          }
-        ]
+      "hero": {
+        "eyebrow": "Software Engineer",
+        "lead": "Building production platforms for immigration, education, and partner operations — from e-signature and payments to AI scoring and ops automation.",
+        "view_work": "View work",
+        "get_in_touch": "Get in touch",
+        "light": "Light",
+        "dark": "Dark",
+        "mode": "mode",
+        "scroll": "Scroll to about"
       },
-      {
-        "title": "Immiland Flow",
-        "startDate": "2024",
-        "description": "My first project at Immiland Canada. It's a web application in which the user can quote the price of immigration services. I participated mostly in front-end functionalities; such as the improvement of css styles, mobile responsiveness, and user experience enhancement.",
-        "images": [
-          "images/portfolio/flow/flow-english.png",
-          "images/portfolio/flow/flow-french.png"
-        ],
-        "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
-        "technologies": [
-          {
-            "class": "devicon-react-plain",
-            "name": "React"
-          },
-          {
-            "class": "devicon-tailwindcss-original",
-            "name": "Tailwind"
-          },
-          {
-            "class": "devicon-nestjs-original",
-            "name": "Nest.js"
-          }
-        ]
-      },
-      {
-        "title": "Cinerama",
-        "startDate": "2023",
-        "description": "The most expanded application I had opportunity to work with during my time at college, and also my first Full-Stack project. It's a Cinema booking app created with Express.js, React.js, and MongoDB",
-        "images": [
-          "images/portfolio/cinerama/p1.jpg",
-          "images/portfolio/cinerama/p2.jpg"
-        ],
-        "url": "https://nicky10.github.io/IndependentCinemaFrontend/",
-        "technologies": [
-          {
-            "class": "devicon-react-plain",
-            "name": "React"
-          },
-          {
-            "class": "devicon-express-original",
-            "name": "Express"
-          },
-          {
-            "class": "devicon-mongodb-plain",
-            "name": "MongoDB"
-          }
-        ]
-      },
-      {
-        "title": "Toronto Website",
-        "startDate": "2021",
-        "description": "Personal project for study subject. It's an HTML5, CSS3, and JavaScript website, showing a little bit about Toronto's lifestyle :)",
-        "images": [
-          "images/portfolio/toronto-interactive/p1.jpg",
-          "images/portfolio/toronto-interactive/p2.jpg"
-        ],
-        "url": "https://nicky10.github.io/index.html",
-        "technologies": [
-          {
-            "class": "devicon-html5-plain",
-            "name": "HTML5"
-          },
-          {
-            "class": "devicon-css3-plain",
-            "name": "CSS3"
-          },
-          {
-            "class": "devicon-javascript-plain",
-            "name": "JavaScript"
-          }
-        ]
-      },
-      {
-        "title": "Visual Computing",
-        "startDate": "2018",
-        "description": "One of the first apps I was working on my University. My first approach to a Full-Stack Development, Using HTML5, CSS5, the Bootstrap Framework, and JavaScript to create some ilusions. I've learned a lot!",
-        "images": [
-          "images/portfolio/visual-computing/p1.jpg",
-          "images/portfolio/visual-computing/p2.jpg"
-        ],
-        "url": "https://visualcomputing2020.github.io/",
-        "technologies": [
-          {
-            "class": "devicon-html5-plain",
-            "name": "HTML5"
-          },
-          {
-            "class": "devicon-css3-plain",
-            "name": "CSS3"
-          },
-          {
-            "class": "devicon-bootstrap-plain",
-            "name": "Bootstrap"
-          },
-          {
-            "class": "devicon-javascript-plain",
-            "name": "JavaScript"
-          }
-        ]
+      "projects_lead": "Production systems shipped at Immiland — e-signature, language placement, partner portals, consultation booking, and humanitarian transparency.",
+      "footer_tagline": "Open to full-stack roles and product-minded engineering teams.",
+      "featured": "Featured",
+      "project_details": "View details",
+      "visit_live": "Visit live platform",
+      "download_resume": "Download resume",
+      "achievements": "Achievements",
+      "contact": {
+        "title": "Let’s connect",
+        "lead": "Share your name and email — I’ll send you a short note with my contact details.",
+        "name": "Name",
+        "email": "Email",
+        "submit": "Send message",
+        "sending": "Sending…",
+        "done": "Done",
+        "close": "Close",
+        "successTitle": "Thank you",
+        "successBody": "I just sent you an email with my contact details. Feel free to reply to that message anytime.",
+        "required": "Please enter your name and email.",
+        "error": "Something went wrong. Please try again or email nicolas.felipedelgado@gmail.com.",
+        "missingEndpoint": "Contact form is almost ready. Meanwhile, email nicolas.felipedelgado@gmail.com."
       }
-    ],
-    "certificates": [
-      {
-        "title": "Improving Deep Neural Networks",
-        "startDate": "2020",
-        "description": "I learnt the best practices to train and develop test sets and analyze bias/variance for building deep learning applications",
-        "images": [
-          "images/portfolio/certificates/cert1.png"
-        ],
-        "url": "https://www.coursera.org/account/accomplishments/certificate/MX7RQUZMZBRJ",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-tensorflow-original",
-            "name": "TensorFlow"
-          }
-        ]
-      },
-      {
-        "title": "Deep Learning Specialization",
-        "startDate": "2020",
-        "description": "I was able to understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology",
-        "images": [
-          "images/portfolio/certificates/cert2.png"
-        ],
-        "url": "https://www.coursera.org/account/accomplishments/certificate/3MPF5HCYFS9T",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-tensorflow-original",
-            "name": "TensorFlow"
-          }
-        ]
-      },
-      {
-        "title": "Structuring Machine Learning Projects",
-        "startDate": "2020",
-        "description": "I leart how to build a successful machine learning project and get to practice decision-making as a machine learning project leader. ",
-        "images": [
-          "images/portfolio/certificates/cert3.png"
-        ],
-        "url": "https://www.coursera.org/account/accomplishments/certificate/Q9AK6UXBVWK8",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-tensorflow-original",
-            "name": "TensorFlow"
-          }
-        ]
-      },
-      {
-        "title": "Data Analysis with Python",
-        "startDate": "2020",
-        "description": "I gained fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language",
-        "images": [
-          "images/portfolio/certificates/cert4.png"
-        ],
-        "url": "https://courses.cognitiveclass.ai/certificates/f2993da74d9c4d47b7bba906bad5dd4a",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-pandas-plain",
-            "name": "Pandas"
-          },
-          {
-            "class": "devicon-numpy-plain",
-            "name": "Numpy"
-          }
-        ]
-      },
-      {
-        "title": "Data Visualization with Python",
-        "startDate": "2020",
-        "description": "This course showed me how to take data that at first glance has little meaning and present that data in a form that makes sense to people. ",
-        "images": [
-          "images/portfolio/certificates/cert5.png"
-        ],
-        "url": "https://courses.cognitiveclass.ai/certificates/19b07d4426e24a319a3b21ea53e599ef",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-pandas-plain",
-            "name": "Pandas"
-          },
-          {
-            "class": "devicon-numpy-plain",
-            "name": "Numpy"
-          },
-          {
-            "class": "devicon-matplotlib-plain",
-            "name": "MatPlotLib"
-          }
-        ]
-      },
-      {
-        "title": "Python 101 for Data Science",
-        "startDate": "2020",
-        "description": "When finishing this course, I was able to write my own Python scripts and perform basic hands-on data analysis using a Jupyter-based lab environment.",
-        "images": [
-          "images/portfolio/certificates/cert6.png"
-        ],
-        "url": "https://courses.cognitiveclass.ai/certificates/d7b466dcb04a4d0aa385f515865444a1",
-        "technologies": [
-          {
-            "class": "devicon-python-plain",
-            "name": "Python"
-          },
-          {
-            "class": "devicon-pandas-plain",
-            "name": "Pandas"
-          },
-          {
-            "class": "devicon-numpy-plain",
-            "name": "Numpy"
-          },
-          {
-            "class": "devicon-matplotlib-plain",
-            "name": "MatPlotLib"
-          },
-          {
-            "class": "devicon-jupyter-plain",
-            "name": "Jupyter Notebook"
-          }
-        ]
-      }
-    ],
-    
-    "experience": [
-      {
-        "company": "Immiland Canada",
-        "title": "Software Developer",
-        "years": "05/2024 - Current",
-        "mainTech": [
-          "Full Time Job"
-        ],
-        "technologies": [
-          "REST API",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "React.js",
-          "Nest.js",
-          "Agile Development",
-          "Google App Scripts",
-          "Python"
-        ]
-      },
-      {
-        "company": "Centennial College",
-        "title": "Software Engineering",
-        "years": "05/2023 - 12/2023",
-        "mainTech": [
-          "Diploma"
-        ],
-        "technologies": [
-          "REST API",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "React.js",
-          "Express.js",
-          "Test Driven Development",
-          "Agile Development",
-          "C#",
-          ".Net",
-          "Angular"
-        ]
-      },
-      {
-        "company": "Evergreen College",
-        "title": "Computer System and Network Specialist",
-        "years": "02/2022 - 03/2023",
-        "mainTech": [
-          "Diploma"
-        ],
-        "technologies": [
-          "PowerShell",
-          "TCP/IP",
-          "Windows Server",
-          "Domain Management",
-          "Cyber Security"
-        ]
-      },
-      {
-        "company": "INDRA",
-        "title": "Software Engineer",
-        "years": "06/2021 - 09/2022",
-        "mainTech": [
-          "Full Time Job"
-        ],
-        "technologies": [
-          "Python",
-          "Pandas",
-          "Numpy",
-          "Selenium",
-          "Linux",
-          "SCRUM",
-          "Agile Development", 
-          "Database Management",
-          "JIRA"
-        ]
-      },
-      {
-        "company": "Universidad Nacional de Colombia",
-        "title": "Computer Engineering",
-        "years": "08/2016 - 02/2022",
-        "mainTech": [
-          "Bachelor's Degree"
-        ],
-        "technologies": [
-          "Python",
-          "C++",
-          "C#",
-          "Java",
-          "JavaScript",
-          "CS Fundamentals",
-          "OOP",
-          "Database Management",
-          "Software Architecture",
-          "Machine Learning"
-        ]
-      }
-    ]
-  }
+    }
+  },
+  "projects": [
+    {
+      "title": "Immiland Sign",
+      "startDate": "2025–2026",
+      "featured": true,
+      "description": "Designed and built a multi-tenant electronic signature platform (DocuSign-style) from the ground up: template designer for PDF/DOCX, sequential and parallel signing workflows, token-based public signing, hash-chained audit trails, completion certificates, Stripe Connect payment fields on contracts, API keys, outbound webhooks, and a DocuSign migration bridge. Primary author on both the Next.js frontend and NestJS backend, deployed on Cloud Run.",
+      "images": [
+        "images/portfolio/immiland-sign/immiland-sign.png"
+      ],
+      "url": "https://immiland-sign-384917653933.us-central1.run.app/",
+      "technologies": [
+        {
+          "class": "devicon-nextjs-plain",
+          "name": "Next.js"
+        },
+        {
+          "class": "devicon-nestjs-plain",
+          "name": "NestJS"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
+        },
+        {
+          "class": "fab fa-stripe",
+          "name": "Stripe"
+        }
+      ]
+    },
+    {
+      "title": "PIE Placement Exam Platform",
+      "startDate": "2025",
+      "featured": true,
+      "description": "Built a full language placement product: consent and identity verification, multi-section exams (listening, reading, writing, speaking), results and verifiable certificates, admin tooling, and i18n. Paired with a FastAPI + scikit-learn scoring service for CEFR/DELF-oriented level prediction and rubric breakdowns — used in production for PIE language assessment.",
+      "images": [
+        "images/portfolio/pie-placement/pie-placement-test.png"
+      ],
+      "url": "https://app.planetaimmilandeducation.com/",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-nestjs-plain",
+          "name": "NestJS"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-fastapi-plain",
+          "name": "FastAPI"
+        }
+      ]
+    },
+    {
+      "title": "Affiliate & Agency Partner Hub",
+      "startDate": "2025–2026",
+      "featured": true,
+      "description": "Delivered a Next.js partner portal for agencies: leads, student progress, invoicing, RBAC, Google Sheets sync, and Genkit AI helpers for sheet-driven workflows. Connected to Apps Script JWT auth and onboarding flows so affiliates can operate against Immiland's backend with a clear operational cockpit.",
+      "images": [
+        "images/portfolio/affiliates/affiliates.png"
+      ],
+      "url": "https://affiliates-pie-615391055837.us-central1.run.app/",
+      "technologies": [
+        {
+          "class": "devicon-nextjs-plain",
+          "name": "Next.js"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-firebase-plain",
+          "name": "Firebase"
+        },
+        {
+          "class": "devicon-google-plain",
+          "name": "Google APIs"
+        },
+        {
+          "class": "devicon-react-plain",
+          "name": "React Query"
+        }
+      ]
+    },
+    {
+      "title": "Immiland Foundation",
+      "startDate": "2025–2026",
+      "featured": true,
+      "description": "Built the public humanitarian portal for Immiland Foundation: missions, donation transparency, impact dashboards, volunteer onboarding, reported needs, Stripe donations, and admin tooling. React + Vite + TypeScript frontend with Framer Motion, connected to Immiland APIs and deployed on Google Cloud Run.",
+      "images": [
+        "images/portfolio/immiland-foundation/foundation1.png",
+        "images/portfolio/immiland-foundation/foundation2.png"
+      ],
+      "url": "https://immilandfoundation.com/",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-vitejs-plain",
+          "name": "Vite"
+        },
+        {
+          "class": "devicon-tailwindcss-original",
+          "name": "Tailwind"
+        },
+        {
+          "class": "fab fa-stripe",
+          "name": "Stripe"
+        }
+      ]
+    },
+    {
+      "title": "Consultation Booking Platform",
+      "startDate": "2024–2026",
+      "featured": true,
+      "description": "Built a Calendly-style replacement for Immiland Law consultations: syncs consultants' Google Calendars for real availability, lets clients book immigration appointments, collects payment through Stripe, sends reminder emails, and creates calendar events for all guests automatically. Used on live service pages such as pre-shipment / application review scheduling.",
+      "images": [
+        "images/portfolio/booking/appointment1.png",
+        "images/portfolio/booking/appointment2.png"
+      ],
+      "url": "https://en.immilandcanada.com/law/revision-previa-a-envio",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-nodejs-plain",
+          "name": "Express"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "fab fa-stripe",
+          "name": "Stripe"
+        },
+        {
+          "class": "devicon-google-plain",
+          "name": "Google Calendar"
+        }
+      ]
+    },
+    {
+      "title": "CRS Calculator & Dashboard",
+      "startDate": "2025",
+      "featured": false,
+      "description": "Full-stack Express Entry CRS scoring tool with configurable rules, interactive React calculator, language-score logic, and syncing against official immigration data sources. Built end-to-end with a focus on clarity and accurate point calculation.",
+      "images": [
+        "images/portfolio/crsCalculator/crs1.png",
+        "images/portfolio/crsCalculator/crs2.png"
+      ],
+      "url": "https://en.immilandcanada.com/calculadora-crs",
+      "technologies": [
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-tailwindcss-original",
+          "name": "Tailwind"
+        },
+        {
+          "class": "devicon-nestjs-plain",
+          "name": "NestJS"
+        }
+      ]
+    },
+    {
+      "title": "Immiland Flow — Client Purchases",
+      "startDate": "2024–2025",
+      "featured": false,
+      "description": "Client-facing purchase experience for immigration services: Stripe checkout, province-aware tax logic, service quotation flows, and responsive UX improvements across English and French.",
+      "images": [
+        "images/portfolio/flow/flow-english.png",
+        "images/portfolio/flow/flow-french.png"
+      ],
+      "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-typescript-plain",
+          "name": "TypeScript"
+        },
+        {
+          "class": "devicon-tailwindcss-original",
+          "name": "Tailwind"
+        },
+        {
+          "class": "devicon-nodejs-plain",
+          "name": "Express"
+        },
+        {
+          "class": "fab fa-stripe",
+          "name": "Stripe"
+        }
+      ]
+    },
+    {
+      "title": "Immiland Management App",
+      "startDate": "2024–2026",
+      "featured": false,
+      "description": "Ongoing full-stack work on Immiland's core operations platform — features, bug fixes, and UX across contracts, consultations, education, messaging, and payments. Stack: React, NestJS, PostgreSQL, real-time notifications, and third-party integrations.",
+      "images": [
+        "images/portfolio/immilandApp/front-english.png",
+        "images/portfolio/immilandApp/front-french.png"
+      ],
+      "url": "https://flow.immiland.app/flow/4e52566e-eefe-41e4-8123-5d51910c9402",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-nestjs-plain",
+          "name": "NestJS"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
+        },
+        {
+          "class": "devicon-tailwindcss-original",
+          "name": "Tailwind"
+        }
+      ]
+    },
+    {
+      "title": "Cinerama",
+      "startDate": "2023",
+      "featured": false,
+      "description": "Full-stack cinema booking application built during college — seat selection, showtimes, and booking flows with Express.js, React, and MongoDB. My first end-to-end product as a student developer.",
+      "images": [
+        "images/portfolio/cinerama/p1.jpg",
+        "images/portfolio/cinerama/p2.jpg"
+      ],
+      "url": "https://nicky10.github.io/IndependentCinemaFrontend/",
+      "technologies": [
+        {
+          "class": "devicon-react-plain",
+          "name": "React"
+        },
+        {
+          "class": "devicon-express-original",
+          "name": "Express"
+        },
+        {
+          "class": "devicon-mongodb-plain",
+          "name": "MongoDB"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Improving Deep Neural Networks",
+      "startDate": "2020",
+      "description": "Best practices for training deep learning models, bias/variance analysis, and building reliable evaluation pipelines.",
+      "images": [
+        "images/portfolio/certificates/cert1.png"
+      ],
+      "url": "https://www.coursera.org/account/accomplishments/certificate/MX7RQUZMZBRJ",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-tensorflow-original",
+          "name": "TensorFlow"
+        }
+      ]
+    },
+    {
+      "title": "Deep Learning Specialization",
+      "startDate": "2020",
+      "description": "Foundations of deep learning: neural networks, CNNs, sequence models, and practical application of modern AI techniques.",
+      "images": [
+        "images/portfolio/certificates/cert2.png"
+      ],
+      "url": "https://www.coursera.org/account/accomplishments/certificate/3MPF5HCYFS9T",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-tensorflow-original",
+          "name": "TensorFlow"
+        }
+      ]
+    },
+    {
+      "title": "Structuring Machine Learning Projects",
+      "startDate": "2020",
+      "description": "How to structure ML projects, prioritize improvements, and make decisions as an ML project lead.",
+      "images": [
+        "images/portfolio/certificates/cert3.png"
+      ],
+      "url": "https://www.coursera.org/account/accomplishments/certificate/Q9AK6UXBVWK8",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-tensorflow-original",
+          "name": "TensorFlow"
+        }
+      ]
+    },
+    {
+      "title": "Data Analysis with Python",
+      "startDate": "2020",
+      "description": "Data structures, networked APIs, and databases for practical analysis with Python.",
+      "images": [
+        "images/portfolio/certificates/cert4.png"
+      ],
+      "url": "https://courses.cognitiveclass.ai/certificates/f2993da74d9c4d47b7bba906bad5dd4a",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-pandas-plain",
+          "name": "Pandas"
+        },
+        {
+          "class": "devicon-numpy-plain",
+          "name": "Numpy"
+        }
+      ]
+    },
+    {
+      "title": "Data Visualization with Python",
+      "startDate": "2020",
+      "description": "Turning raw datasets into clear visual narratives people can act on.",
+      "images": [
+        "images/portfolio/certificates/cert5.png"
+      ],
+      "url": "https://courses.cognitiveclass.ai/certificates/19b07d4426e24a319a3b21ea53e599ef",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-pandas-plain",
+          "name": "Pandas"
+        },
+        {
+          "class": "devicon-matplotlib-plain",
+          "name": "MatPlotLib"
+        }
+      ]
+    },
+    {
+      "title": "Python 101 for Data Science",
+      "startDate": "2020",
+      "description": "Core Python scripting and hands-on analysis in a Jupyter-based lab environment.",
+      "images": [
+        "images/portfolio/certificates/cert6.png"
+      ],
+      "url": "https://courses.cognitiveclass.ai/certificates/d7b466dcb04a4d0aa385f515865444a1",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-jupyter-plain",
+          "name": "Jupyter"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Micro1",
+      "title": "AI Trainer Expert",
+      "location": "Toronto, Ontario",
+      "years": "12/2025 – Present",
+      "type": "work",
+      "mainTech": [
+        "Contract"
+      ],
+      "summary": "Evaluating and refining LLM outputs against strict rubrics to improve factual accuracy, clarity, and scoring reliability.",
+      "highlights": [
+        "Evaluated and refined LLM outputs against strict rubrics, ensuring factual accuracy, self-containment, and precise alignment with evaluation criteria.",
+        "Detected and corrected scope violations, ambiguity, and unsupported assumptions in model responses.",
+        "Produced high-quality revisions and justifications that improved scoring reliability and regulatory consistency.",
+        "Ranked among the top 10 experts by number of signed-off tasks, reflecting consistent accuracy, throughput, and evaluator trust."
+      ],
+      "technologies": [
+        "AI Training",
+        "LLM Evaluation",
+        "Rubrics",
+        "Code Review",
+        "Technical Writing"
+      ]
+    },
+    {
+      "company": "Immiland Canada",
+      "title": "Software Engineer",
+      "location": "Toronto, Ontario",
+      "years": "04/2024 – Present",
+      "type": "work",
+      "mainTech": [
+        "Full-time"
+      ],
+      "summary": "Technical Lead across multiple product initiatives spanning TypeScript, Node.js, React/Next.js, NestJS, payments, e-signature, and operational automation.",
+      "highlights": [
+        "Acted as Technical Lead for multiple development initiatives — guiding architecture, mentoring developers, and ensuring code quality across JavaScript, Node.js, and TypeScript projects.",
+        "Engineered and maintained Google Apps Script solutions to automate business processes, eliminating repetitive tasks and improving operational productivity.",
+        "Automated payroll systems by integrating the Bamboo API and Kajabi webhooks, aligning paycheck distribution with employee hours and reducing payment errors.",
+        "Built and shipped production platforms including e-signature, placement exams, affiliate portals, CRM workflows, and the Immiland Foundation humanitarian site."
+      ],
+      "achievements": [
+        "Contributed to a 30% improvement in data access speed and a 75% reduction in process runtime through strategic technology adoption.",
+        "Helped improve large-scale system capabilities and performance, supporting a 60% increase in operational efficiency.",
+        "Automated key business processes and enhanced data visualization, contributing to a 55% increase in productivity and sales impact."
+      ],
+      "technologies": [
+        "TypeScript",
+        "React / Next.js",
+        "NestJS",
+        "PostgreSQL",
+        "Stripe",
+        "Google Apps Script",
+        "Bamboo API",
+        "Cloud Run"
+      ]
+    },
+    {
+      "company": "Centennial College",
+      "title": "Software Engineering Technician Diploma",
+      "location": "Toronto, Ontario",
+      "years": "2023",
+      "type": "education",
+      "mainTech": [
+        "With Honors"
+      ],
+      "summary": "GPA 3.9 — software engineering fundamentals with strong focus on full-stack development, testing, and Agile delivery.",
+      "highlights": [
+        "Completed diploma with honors (GPA 3.9).",
+        "Built end-to-end applications using React, Express, Angular, and C# / .NET.",
+        "Practiced TDD and Agile collaboration on team projects."
+      ],
+      "technologies": [
+        "React.js",
+        "Express.js",
+        "Angular",
+        "C# / .NET",
+        "TDD",
+        "Agile"
+      ]
+    },
+    {
+      "company": "Evergreen College",
+      "title": "Computer System and Network Specialist Diploma",
+      "location": "Toronto, Ontario",
+      "years": "02/2023",
+      "type": "education",
+      "mainTech": [
+        "With Honors"
+      ],
+      "summary": "GPA 4.0 — systems administration, networking, and cybersecurity foundations.",
+      "highlights": [
+        "Completed diploma with honors (GPA 4.0).",
+        "Covered Windows Server, TCP/IP, PowerShell, domain management, and cyber security fundamentals."
+      ],
+      "technologies": [
+        "PowerShell",
+        "TCP/IP",
+        "Windows Server",
+        "Cyber Security"
+      ]
+    },
+    {
+      "company": "INDRA",
+      "title": "Software Engineer",
+      "location": "Bogotá, Colombia",
+      "years": "06/2021 – 09/2022",
+      "type": "work",
+      "mainTech": [
+        "Full-time"
+      ],
+      "summary": "Built API services and data pipelines in enterprise environments, focusing on data integrity, Linux integrations, and Python-based processing.",
+      "highlights": [
+        "Built robust API services for sending and receiving data across systems.",
+        "Researched and resolved issues related to data-flow integrity into SQL and NoSQL databases.",
+        "Supported integration of software components on Linux operating systems.",
+        "Developed Python scripts for data processing and transformation using regex and JSON/XML parsing from heterogeneous sources."
+      ],
+      "achievements": [
+        "Helped reduce software defects and technical issues through cross-functional collaboration, contributing to a 25% improvement in system stability.",
+        "Contributed to research, design, and development of large-scale systems, supporting a 20% increase in operational efficiency.",
+        "Supported technology adoption that improved data access speed by 30% and reduced server downtime by 15%."
+      ],
+      "technologies": [
+        "Python",
+        "SQL / NoSQL",
+        "APIs",
+        "Linux",
+        "JSON / XML",
+        "SCRUM",
+        "JIRA"
+      ]
+    },
+    {
+      "company": "Universidad Nacional de Colombia",
+      "title": "Bachelor’s in Computer Engineering",
+      "location": "Bogotá, Colombia",
+      "years": "08/2016 – 02/2022",
+      "type": "education",
+      "mainTech": [
+        "Bachelor's"
+      ],
+      "summary": "GPA 3.7 — computer science fundamentals, software architecture, and machine learning foundations.",
+      "highlights": [
+        "Completed bachelor’s degree in Computer Engineering (GPA 3.7).",
+        "Strong foundation in algorithms, OOP, databases, and software architecture."
+      ],
+      "technologies": [
+        "Python",
+        "Java",
+        "C++",
+        "Software Architecture",
+        "Machine Learning",
+        "Databases"
+      ]
+    }
+  ]
+}

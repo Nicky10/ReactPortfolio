@@ -1,118 +1,159 @@
 {
-    "basic_info": {
-      "name": "Nicolas Delgado",
-      "titles": [ "Software Engineer / Developer", "Back-End Developer", "Full-Stack Developer", "Data Scientist" ],
-      "social": [
-        {
-          "name": "github",
-          "url": "https://github.com/Nicky10",
-          "class": "fab fa-github"
-        },
-        {
-          "name": "linkedIn",
-          "url": "https://www.linkedin.com/in/nicolas-felipe-delgado/",
-          "class": "fab fa-linkedin"
-        },
-        {
-          "name": "mail",
-          "url": "mailto:nicolas.felipedelgado@gmail.com",
-          "class": "fa fa-envelope"
-        }
-      ],
-      "image": "myProfile.jpg"
-    },
-    "skills": {
-      "icons": [
-        {
-          "name": "Python",
-          "class": "devicon-python-plain",
-          "level": "90"
-        },
-        {
-          "name": "Java",
-          "class": "devicon-java-plain",
-          "level": "75"
-        },
-        {
-          "name": "JavaScript",
-          "class": "devicon-javascript-plain",
-          "level": "70"
-        },
-        {
-          "name": "C#",
-          "class": "devicon-csharp-plain",
-          "level": "65"
-        },
-        {
-          "name": "HTML 5",
-          "class": "devicon-html5-plain",
-          "level": "95"
-        },
-        {
-          "name": "CSS 3",
-          "class": "devicon-css3-plain",
-          "level": "95"
-        },
-        {
-          "name": "Bootstrap",
-          "class": "devicon-bootstrap-plain",
-          "level": "85"
-        },
-        {
-          "name": "Express.js",
-          "class": "devicon-express-original",
-          "level": "85"
-        },
-        {
-          "name": "React",
-          "class": "devicon-react-original",
-          "level": "85"
-        },
-        {
-          "name": "Pandas",
-          "class": "devicon-pandas-plain",
-          "level": "85"
-        },
-        {
-          "name": "Selenium",
-          "class": "devicon-selenium-original",
-          "level": "85"
-        },
-        {
-          "name": "Sass",
-          "class": "devicon-sass-original",
-          "level": "75"
-        },
-        {
-          "name": "AWS",
-          "class": "devicon-amazonwebservices-plain-wordmark",
-          "level": "75"
-        },
-        {
-          "name": "Linux",
-          "class": "devicon-linux-plain",
-          "level": "85"
-        },
-        {
-          "name": "MySql",
-          "class": "devicon-mysql-plain",
-          "level": "60"
-        },
-        {
-          "name": "SQL Server",
-          "class": "devicon-microsoftsqlserver-plain",
-          "level": "60"
-        },
-        {
-          "name": "PostgreSQL",
-          "class": "devicon-postgresql-plain",
-          "level": "60"
-        },
-        {
-          "name": "MongoDB",
-          "class": "devicon-mongodb-plain",
-          "level": "80"
-        }
-      ]
-    }
+  "basic_info": {
+    "name": "Nicolas Delgado",
+    "titles": [
+      "Full-Stack Software Engineer",
+      "NestJS & React Specialist",
+      "Product-Minded Builder"
+    ],
+    "social": [
+      {
+        "name": "github",
+        "url": "https://github.com/Nicky10",
+        "class": "fab fa-github"
+      },
+      {
+        "name": "linkedIn",
+        "url": "https://www.linkedin.com/in/nicolas-felipe-delgado/",
+        "class": "fab fa-linkedin"
+      },
+      {
+        "name": "mail",
+        "url": "mailto:nicolas.felipedelgado@gmail.com",
+        "class": "fa fa-envelope"
+      }
+    ],
+    "image": "myProfile.jpg",
+    "resume_pdf": "Resume_Nicolas_Delgado.pdf",
+    "contact_form_endpoint": "https://script.google.com/macros/s/AKfycbxb3d6RJ4JmlmTeTLbrzJBJvPeVq3DmsahM5Tfq_--DZQMfz3kYtI6sHMXVdAL2DFNCRA/exec"
+  },
+  "skills": {
+    "icons": [
+      {
+        "name": "TypeScript",
+        "class": "devicon-typescript-plain",
+        "level": "90"
+      },
+      {
+        "name": "JavaScript",
+        "class": "devicon-javascript-plain",
+        "level": "90"
+      },
+      {
+        "name": "React",
+        "class": "devicon-react-original",
+        "level": "90"
+      },
+      {
+        "name": "Next.js",
+        "class": "devicon-nextjs-plain",
+        "level": "80"
+      },
+      {
+        "name": "Vite",
+        "class": "devicon-vitejs-plain",
+        "level": "80"
+      },
+      {
+        "name": "NestJS",
+        "class": "devicon-nestjs-plain",
+        "level": "90"
+      },
+      {
+        "name": "Node.js",
+        "class": "devicon-nodejs-plain",
+        "level": "85"
+      },
+      {
+        "name": "Express",
+        "class": "devicon-express-original",
+        "level": "80"
+      },
+      {
+        "name": "PostgreSQL",
+        "class": "devicon-postgresql-plain",
+        "level": "85"
+      },
+      {
+        "name": "MongoDB",
+        "class": "devicon-mongodb-plain",
+        "level": "75"
+      },
+      {
+        "name": "Python",
+        "class": "devicon-python-plain",
+        "level": "85"
+      },
+      {
+        "name": "FastAPI",
+        "class": "devicon-fastapi-plain",
+        "level": "75"
+      },
+      {
+        "name": "scikit-learn",
+        "class": "devicon-sklearn-plain",
+        "level": "70"
+      },
+      {
+        "name": "TensorFlow",
+        "class": "devicon-tensorflow-original",
+        "level": "70"
+      },
+      {
+        "name": "Tailwind",
+        "class": "devicon-tailwindcss-original",
+        "level": "85"
+      },
+      {
+        "name": "Stripe",
+        "class": "fab fa-stripe",
+        "level": "80"
+      },
+      {
+        "name": "Firebase",
+        "class": "devicon-firebase-plain",
+        "level": "75"
+      },
+      {
+        "name": "Google Cloud",
+        "class": "devicon-googlecloud-plain",
+        "level": "75"
+      },
+      {
+        "name": "Google APIs",
+        "class": "devicon-google-plain",
+        "level": "80"
+      },
+      {
+        "name": "Apps Script",
+        "class": "devicon-google-plain",
+        "level": "80"
+      },
+      {
+        "name": "React Query",
+        "class": "devicon-react-original",
+        "level": "75"
+      },
+      {
+        "name": "Docker",
+        "class": "devicon-docker-plain",
+        "level": "70"
+      },
+      {
+        "name": "AWS",
+        "class": "devicon-amazonwebservices-plain-wordmark",
+        "level": "70"
+      },
+      {
+        "name": "Git",
+        "class": "devicon-git-plain",
+        "level": "90"
+      },
+      {
+        "name": "Linux",
+        "class": "devicon-linux-plain",
+        "level": "80"
+      }
+    ]
   }
+}

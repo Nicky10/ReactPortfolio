@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1A24"/>
+      <stop offset="55%" stop-color="#0F4C5C"/>
+      <stop offset="100%" stop-color="#0B1A24"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#glow)"/>
+  <circle cx="980" cy="560" r="180" fill="#5EEAD4" opacity="0.08"/>
+  <rect x="80" y="80" width="140" height="8" rx="4" fill="#5EEAD4" opacity="0.7"/>
+  <text x="80" y="270" font-family="Georgia, serif" font-size="56" fill="#F8FAFC" font-weight="700">Consultation Booking</text>
+  <text x="80" y="340" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#E2E8F0" opacity="0.85">Calendly-style scheduling · Stripe · Calendar sync</text>
+  <rect x="80" y="410" width="280" height="44" rx="8" fill="#5EEAD4" opacity="0.2" stroke="#5EEAD4" stroke-width="1.5"/>
+  <text x="100" y="438" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#5EEAD4">React · Express · Google Calendar</text>
+</svg>
