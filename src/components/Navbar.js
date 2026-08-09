@@ -47,6 +47,14 @@ class Navbar extends Component {
         ? this.props.sharedBasicInfo.name.split(" ")[0]
         : "Nicolas";
 
+    const social =
+      (this.props.sharedBasicInfo && this.props.sharedBasicInfo.social) || [];
+    const github =
+      social.find((item) => item.name === "github") || {
+        url: "https://github.com/Nicky10",
+        class: "fab fa-github",
+      };
+
     const showControls = this.props.controlsPinned;
 
     return (
@@ -56,14 +64,26 @@ class Navbar extends Component {
         }`}
       >
         <div className="site-nav__inner">
-          <button
-            type="button"
-            className="site-nav__brand"
-            onClick={() => this.scrollTo("home")}
-          >
-            {name}
-            <span className="site-nav__brand-dot">.</span>
-          </button>
+          <div className="site-nav__brand-wrap">
+            <button
+              type="button"
+              className="site-nav__brand"
+              onClick={() => this.scrollTo("home")}
+            >
+              {name}
+              <span className="site-nav__brand-dot">.</span>
+            </button>
+            <a
+              className="site-nav__github"
+              href={github.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              title="GitHub"
+            >
+              <i className={github.class || "fab fa-github"} aria-hidden="true" />
+            </a>
+          </div>
 
           {showControls ? (
             <FloatingNavControls

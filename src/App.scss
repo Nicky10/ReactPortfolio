@@ -195,6 +195,13 @@ button {
   backdrop-filter: blur(12px);
 }
 
+.site-nav__brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
 .site-nav__brand {
   background: none;
   border: 0;
@@ -209,6 +216,22 @@ button {
 
 .site-nav__brand-dot {
   color: var(--accent-bright);
+}
+
+.site-nav__github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248, 250, 252, 0.88);
+  font-size: 1.85rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav__github:hover {
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .site-nav__links {
