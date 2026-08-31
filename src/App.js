@@ -13,7 +13,6 @@ import Certificates from "./components/Certificates";
 import ContactModal from "./components/ContactModal";
 import ClickBurst from "./components/ClickBurst";
 import ContentLoadError from "./components/ContentLoadError";
-import CaseStudies from "./components/CaseStudies";
 import DeliveryCapabilities from "./components/DeliveryCapabilities";
 
 function hasUsableResumeData(resumeData) {
@@ -255,22 +254,10 @@ class App extends Component {
             resumeBasicInfo={resumeBasicInfo}
             sharedBasicInfo={this.state.sharedData.basic_info}
             resumeHref={resumeHref}
-            positioning={this.state.resumeData.positioning}
-            recruiterCta={this.state.resumeData.recruiter_cta}
-            onContactClick={this.openContact}
           />
-          <CaseStudies
-            content={this.state.resumeData.case_studies}
-            sectionName={
-              resumeBasicInfo &&
-              resumeBasicInfo.section_name &&
-              resumeBasicInfo.section_name.case_studies
-            }
-            recruiterCta={this.state.resumeData.recruiter_cta}
-            sharedBasicInfo={this.state.sharedData.basic_info}
-            resumeHref={resumeHref}
-            onContactClick={this.openContact}
-            visitLabels={ui}
+          <Projects
+            resumeProjects={this.state.resumeData.projects}
+            resumeBasicInfo={resumeBasicInfo}
           />
           <DeliveryCapabilities
             content={this.state.resumeData.delivery_capabilities}
@@ -278,14 +265,6 @@ class App extends Component {
               resumeBasicInfo &&
               resumeBasicInfo.section_name &&
               resumeBasicInfo.section_name.delivery
-            }
-          />
-          <Projects
-            resumeProjects={this.state.resumeData.projects}
-            resumeBasicInfo={resumeBasicInfo}
-            caseStudyBadge={
-              this.state.resumeData.case_studies &&
-              this.state.resumeData.case_studies.badge
             }
           />
           <Skills

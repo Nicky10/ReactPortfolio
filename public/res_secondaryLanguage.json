@@ -27,7 +27,6 @@
       "skills": "Compétences",
       "certificates": "Certificats",
       "experience": "Expérience et formation",
-      "case_studies": "Études de cas",
       "delivery": "Livraison et intégrations"
     },
     "ui": {
@@ -39,7 +38,6 @@
         "experience": "Expérience",
         "contact": "Contact",
         "resume": "CV",
-        "case_studies": "Cas",
         "delivery": "Livraison"
       },
       "hero": {
@@ -84,6 +82,14 @@
         "language_body": "Cette langue n’a pas pu se charger. Le contenu actuel n’a pas été remplacé.",
         "retry": "Réessayer",
         "contact": "Écrire à Nicolas"
+      },
+      "project_impact": {
+        "problem": "Problème métier",
+        "ownership": "Ownership",
+        "delivery": "Capacité livrée",
+        "technologies": "Technologies",
+        "integrations": "Intégrations",
+        "outcomes": "Résultats vérifiés"
       }
     }
   },
@@ -92,7 +98,7 @@
       "title": "Immiland Sign",
       "startDate": "2025–2026",
       "featured": true,
-      "description": "Conception et développement d'une plateforme de signature électronique multi-tenant (style DocuSign) : designer de modèles PDF/DOCX, workflows séquentiels et parallèles, signature publique par jeton, piste d'audit chaînée, certificats de complétion, champs de paiement Stripe Connect, clés API, webhooks sortants et pont de migration DocuSign. Auteur principal du frontend Next.js et du backend NestJS, déployés sur Cloud Run.",
+      "description": "Conception et développement d'une plateforme de signature électronique en production : modèles, workflows de signature et encaissement sur les contrats. Auteur principal de l'application web et de l'API, de la conception technique jusqu'au support en production.",
       "images": [
         "images/portfolio/immiland-sign/immiland-sign.png"
       ],
@@ -120,7 +126,44 @@
           "name": "Stripe"
         }
       ],
-      "caseStudy": true
+      "impact_metrics": [
+        {
+          "id": "sign_savings",
+          "value": "~20 k$",
+          "label": "d'économies de coûts d'exploitation par an"
+        },
+        {
+          "id": "sign_productivity",
+          "value": "35 %",
+          "label": "de gain de productivité sur le traitement documentaire"
+        }
+      ],
+      "impact_detail": {
+        "sanitized": true,
+        "problem": "L'organisation avait besoin d'un moyen moins coûteux de faire signer des documents en production, sans rester dépendante d'un fournisseur d'e-signature tiers.",
+        "ownership": "Auteur principal, responsable de bout en bout de l'application web et de l'API, de la conception technique jusqu'au support en production.",
+        "delivery": "Un produit d'e-signature en production, avec modèles, workflows de signature et encaissement sur les contrats.",
+        "technologies": [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "outcomes": [
+          {
+            "value": "~20 k$",
+            "label": "d'économies de coûts d'exploitation par an"
+          },
+          {
+            "value": "35 %",
+            "label": "de gain de productivité sur le traitement documentaire"
+          }
+        ],
+        "availability_note": "Connexion corporative requise — l’accès public n’est pas disponible."
+      }
     },
     {
       "title": "Plateforme d'examen de placement PIE",
@@ -152,7 +195,37 @@
           "class": "devicon-fastapi-plain",
           "name": "FastAPI"
         }
-      ]
+      ],
+      "impact_metrics": [
+        {
+          "id": "pie_users",
+          "value": "100+",
+          "label": "utilisateurs par semaine"
+        }
+      ],
+      "impact_detail": {
+        "sanitized": false,
+        "problem": "Les programmes de langue avaient besoin d'un placement fiable, avec évaluation, scoring et résultats automatisés plutôt qu'un traitement manuel.",
+        "ownership": "Conception et mise en production de la plateforme de tests de placement, y compris les parcours d'évaluation et le service de scoring.",
+        "delivery": "Un produit de placement complet : examens multi-sections, scoring automatisé, résultats et workflows opérationnels utilisés chaque semaine.",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "NestJS",
+          "Python",
+          "FastAPI"
+        ],
+        "integrations": [
+          "Service de scoring FastAPI",
+          "Workflows d'examen et de résultats"
+        ],
+        "outcomes": [
+          {
+            "value": "100+",
+            "label": "utilisateurs par semaine"
+          }
+        ]
+      }
     },
     {
       "title": "Hub affiliés et agences",
@@ -312,6 +385,13 @@
         {
           "class": "fab fa-stripe",
           "name": "Stripe"
+        }
+      ],
+      "impact_metrics": [
+        {
+          "id": "payment_revenue",
+          "value": "10 k$+",
+          "label": "revenu mensuel additionnel via les parcours de paiement"
         }
       ]
     },
@@ -653,163 +733,34 @@
       ]
     }
   ],
-  "positioning": {
-    "impact": {
-      "eyebrow": "Impact vérifié",
-      "title": "Résultats que les recruteurs peuvent vérifier",
-      "metrics": [
-        {
-          "id": "experience",
-          "value": "4+",
-          "label": "années d'expérience commerciale"
-        },
-        {
-          "id": "pie_users",
-          "value": "100+",
-          "label": "utilisateurs PIE par semaine"
-        },
-        {
-          "id": "sign_savings",
-          "value": "~20 k$",
-          "label": "économies annuelles Immiland Sign"
-        },
-        {
-          "id": "revenue",
-          "value": "10 k$+",
-          "label": "revenu mensuel additionnel via les parcours de paiement"
-        }
-      ]
-    },
-    "role_paths": {
-      "eyebrow": "Parcours de recrutement",
-      "title": "Aller à la preuve pertinente pour le poste",
-      "lead": "Accédez aux études de cas et aux capacités de livraison les plus utiles pour le rôle que vous recrutez. Le reste du portfolio reste disponible.",
-      "paths": [
-        {
-          "id": "full-stack",
-          "title": "Ingénierie produit full-stack",
-          "description": "Livraison produit de bout en bout, interfaces et services inclus.",
-          "cta": "Voir les preuves produit",
-          "target": "case-studies"
-        },
-        {
-          "id": "backend",
-          "title": "Ingénierie backend et intégrations",
-          "description": "API, paiements, automatisation, données et exploitation en production.",
-          "cta": "Voir les preuves de livraison",
-          "target": "delivery-capabilities"
-        }
-      ]
-    }
-  },
-  "recruiter_cta": {
-    "hiring_focus": "Profil recherché : full-stack, plateformes et intégrations",
-    "title": "Prochaine étape pour les équipes de recrutement",
-    "lead": "Consultez le CV, ouvrez une conversation, ou visitez les profils professionnels publics.",
-    "availability": "Ouvert aux rôles full-stack et aux équipes orientées produit.",
-    "resume": "Télécharger le CV",
-    "contact": "Contacter Nicolas",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
-  },
-  "case_studies": {
-    "lead": "Deux exemples publiés avec ownership, livraison et résultats vérifiés. Immiland Sign est présenté à un niveau validé, car le produit live est réservé à un accès corporatif.",
-    "badge": "Étude de cas",
-    "open": "Voir l'étude de cas",
-    "labels": {
-      "problem": "Problème métier",
-      "ownership": "Ownership",
-      "delivery": "Capacité livrée",
-      "technologies": "Technologies",
-      "integrations": "Intégrations",
-      "outcomes": "Résultats vérifiés"
-    },
-    "items": [
-      {
-        "id": "immiland-sign",
-        "projectTitle": "Immiland Sign",
-        "title": "Immiland Sign",
-        "sanitized": true,
-        "access": "corporate",
-        "image": "images/portfolio/immiland-sign/immiland-sign.png",
-        "problem": "L'organisation avait besoin d'un moyen moins coûteux de faire signer des documents en production, sans rester dépendante d'un fournisseur d'e-signature tiers.",
-        "ownership": "Auteur principal, responsable de bout en bout de l'application web et de l'API, de la conception technique jusqu'au support en production.",
-        "delivery": "Un produit d'e-signature en production, avec modèles, workflows de signature et encaissement sur les contrats.",
-        "technologies": [
-          "Next.js",
-          "NestJS",
-          "TypeScript",
-          "PostgreSQL"
-        ],
-        "integrations": [
-          "Stripe"
-        ],
-        "outcomes": [
-          {
-            "value": "~20 k$",
-            "label": "d'économies de coûts d'exploitation par an"
-          },
-          {
-            "value": "35 %",
-            "label": "de gain de productivité sur le traitement documentaire"
-          }
-        ],
-        "availability_note": "Connexion corporative requise — l’accès public n’est pas disponible."
-      },
-      {
-        "id": "pie-placement",
-        "projectTitle": "PIE Placement Exam Platform",
-        "title": "PIE Placement Exam Platform",
-        "sanitized": false,
-        "access": "public",
-        "image": "images/portfolio/pie-placement/pie-placement-test.png",
-        "url": "https://app.planetaimmilandeducation.com/",
-        "problem": "Les programmes de langue avaient besoin d'un placement fiable, avec évaluation, scoring et résultats automatisés plutôt qu'un traitement manuel.",
-        "ownership": "Conception et mise en production de la plateforme de tests de placement, y compris les parcours d'évaluation et le service de scoring.",
-        "delivery": "Un produit de placement complet : examens multi-sections, scoring automatisé, résultats et workflows opérationnels utilisés chaque semaine.",
-        "technologies": [
-          "React",
-          "TypeScript",
-          "NestJS",
-          "Python",
-          "FastAPI"
-        ],
-        "integrations": [
-          "Service de scoring FastAPI",
-          "Workflows d'examen et de résultats"
-        ],
-        "outcomes": [
-          {
-            "value": "100+",
-            "label": "utilisateurs par semaine"
-          }
-        ]
-      }
-    ]
-  },
   "delivery_capabilities": {
     "lead": "Comment un besoin encore flou devient un service maintenu en production — sans architecture confidentielle ni identifiants privés.",
     "approach_title": "Approche de livraison",
     "approach": [
       {
         "title": "Discovery produit avec les parties prenantes",
-        "body": "Clarifier des besoins ambigus, prioriser le travail à fort impact, et itérer de l'idée jusqu'au logiciel en production."
+        "body": "Clarifier des besoins ambigus, prioriser le travail à fort impact, et itérer de l'idée jusqu'au logiciel en production.",
+        "id": "discovery"
       },
       {
         "title": "Conception système et API",
-        "body": "Concevoir des API REST, des modèles de données et des contrats par webhooks pour relier produit, paiements et opérations."
+        "body": "Concevoir des API REST, des modèles de données et des contrats par webhooks pour relier produit, paiements et opérations.",
+        "id": "system-api"
       },
       {
         "title": "Livraison full-stack",
-        "body": "Livrer des fonctionnalités sur React/Next.js, Node.js/NestJS, Python/FastAPI et PostgreSQL, de l'implémentation au déploiement."
+        "body": "Livrer des fonctionnalités sur React/Next.js, Node.js/NestJS, Python/FastAPI et PostgreSQL, de l'implémentation au déploiement.",
+        "id": "full-stack"
       },
       {
         "title": "Intégrations et automatisation",
-        "body": "Relier paiements, planification, communications et systèmes métier, et remplacer des processus manuels par des workflows automatisés."
+        "body": "Relier paiements, planification, communications et systèmes métier, et remplacer des processus manuels par des workflows automatisés.",
+        "id": "integrations"
       },
       {
         "title": "Support en production",
-        "body": "Surveiller, diagnostiquer et maintenir les couches frontend, backend, intégrations et données après la mise en production."
+        "body": "Surveiller, diagnostiquer et maintenir les couches frontend, backend, intégrations et données après la mise en production.",
+        "id": "production-support"
       }
     ],
     "systems_title": "Systèmes et intégrations",
@@ -865,23 +816,28 @@
     "production": [
       {
         "title": "Livraison conteneurisée",
-        "body": "Services Docker pour des environnements de build et d'exécution cohérents."
+        "body": "Services Docker pour des environnements de build et d'exécution cohérents.",
+        "id": "containers"
       },
       {
         "title": "Contrôles automatisés",
-        "body": "CI/CD GitHub Actions avec build, tests, vérification de types et quality gates."
+        "body": "CI/CD GitHub Actions avec build, tests, vérification de types et quality gates.",
+        "id": "checks"
       },
       {
         "title": "Contrôles de santé et de readiness",
-        "body": "Endpoints de santé et de readiness utilisés dans les déploiements."
+        "body": "Endpoints de santé et de readiness utilisés dans les déploiements.",
+        "id": "health"
       },
       {
         "title": "Monitoring et suivi d'erreurs",
-        "body": "Sentry et visibilité des erreurs après mise en production."
+        "body": "Sentry et visibilité des erreurs après mise en production.",
+        "id": "monitoring"
       },
       {
         "title": "Diagnostic en production",
-        "body": "Investiguer les incidents sur frontend, backend, intégrations et données dans les systèmes live."
+        "body": "Investiguer les incidents sur frontend, backend, intégrations et données dans les systèmes live.",
+        "id": "troubleshooting"
       }
     ]
   }

@@ -3,6 +3,7 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 import ScrollReveal from "./ScrollReveal";
 import MotionCard from "./MotionCard";
 import SectionAura from "./SectionAura";
+import ProjectImpactMetrics from "./ProjectImpactMetrics";
 
 class Projects extends Component {
   constructor(props) {
@@ -30,7 +31,6 @@ class Projects extends Component {
       projectsLead = ui.projects_lead || "";
       var featuredLabel = ui.featured || "Featured";
       var detailsLabel = ui.project_details || "View details";
-      var caseStudyBadge = this.props.caseStudyBadge || "Case study";
       projects = this.props.resumeProjects.map(function (project, index) {
         const techs = project.technologies || [];
         const techPreview = techs.map((t) => t.name).join(" · ");
@@ -53,11 +53,7 @@ class Projects extends Component {
                   src={`${process.env.PUBLIC_URL}/` + project.images[0]}
                   alt={project.title}
                 />
-                {project.caseStudy ? (
-                  <span className="project-card__badge project-card__badge--case">
-                    {caseStudyBadge}
-                  </span>
-                ) : project.featured ? (
+                {project.featured ? (
                   <span className="project-card__badge">{featuredLabel}</span>
                 ) : null}
               </div>
@@ -68,6 +64,7 @@ class Projects extends Component {
                   <p className="project-card__tech">{techPreview}</p>
                 ) : null}
                 <p className="project-card__excerpt">{description}</p>
+                <ProjectImpactMetrics metrics={project.impact_metrics} />
                 <span className="project-card__more">
                   {detailsLabel}
                   <i className="fas fa-arrow-right" aria-hidden="true"></i>
@@ -85,7 +82,7 @@ class Projects extends Component {
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="section-heading">
-              <span className="section-heading__index">04</span>
+              <span className="section-heading__index">02</span>
               {sectionName}
             </h2>
             <p className="section-lead">{projectsLead}</p>
@@ -99,6 +96,12 @@ class Projects extends Component {
             data={this.state.deps}
             visitLabels={
               (this.props.resumeBasicInfo && this.props.resumeBasicInfo.ui) ||
+              {}
+            }
+            impactLabels={
+              (this.props.resumeBasicInfo &&
+                this.props.resumeBasicInfo.ui &&
+                this.props.resumeBasicInfo.ui.project_impact) ||
               {}
             }
           />

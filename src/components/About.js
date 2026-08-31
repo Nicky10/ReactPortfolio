@@ -5,7 +5,6 @@ import reactIcon from "@iconify/icons-logos/react";
 import nodejsIcon from "@iconify/icons-logos/nodejs-icon";
 import ScrollReveal from "./ScrollReveal";
 import SectionAura from "./SectionAura";
-import PositioningBlock from "./Positioning";
 
 class About extends Component {
   render() {
@@ -103,14 +102,6 @@ class About extends Component {
               </div>
             </ScrollReveal>
           </div>
-
-          <PositioningBlock
-            positioning={this.props.positioning}
-            recruiterCta={this.props.recruiterCta}
-            sharedBasicInfo={this.props.sharedBasicInfo}
-            resumeHref={resumeHref}
-            onContactClick={this.props.onContactClick}
-          />
         </div>
       </section>
     );

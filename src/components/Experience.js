@@ -113,7 +113,7 @@ class Experience extends Component {
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="section-heading">
-              <span className="section-heading__index">07</span>
+              <span className="section-heading__index">06</span>
               {sectionName}
             </h2>
           </ScrollReveal>

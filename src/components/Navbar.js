@@ -36,9 +36,8 @@ class Navbar extends Component {
     const nav = this.props.navLabels || {};
     const links = [
       { id: "about", label: nav.about || "About" },
-      { id: "case-studies", label: nav.case_studies || "Cases" },
-      { id: "delivery-capabilities", label: nav.delivery || "Delivery" },
       { id: "portfolio", label: nav.work || "Work" },
+      { id: "delivery-capabilities", label: nav.delivery || "Delivery" },
       { id: "skills", label: nav.skills || "Skills" },
       { id: "certificates", label: nav.certs || "Certs" },
       { id: "resume", label: nav.experience || "Experience" },

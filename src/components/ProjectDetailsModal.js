@@ -4,17 +4,26 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+import ProjectImpactMetrics from "./ProjectImpactMetrics";
+import ProjectImpactDetail from "./ProjectImpactDetail";
 
 class ProjectDetailsModal extends Component {
   render() {
-    if (this.props.data) {
-      const technologies = this.props.data.technologies;
-      const images = this.props.data.images;
-      var title = this.props.data.title;
-      var description = this.props.data.description;
-      var url = this.props.data.url;
-      var access = this.props.data.access || "public";
-      if (this.props.data.technologies) {
+    const {
+      data,
+      visitLabels,
+      impactLabels,
+      ...modalProps
+    } = this.props;
+
+    if (data) {
+      const technologies = data.technologies;
+      const images = data.images;
+      var title = data.title;
+      var description = data.description;
+      var url = data.url;
+      var access = data.access || "public";
+      if (data.technologies) {
         var tech = technologies.map((icons, i) => {
           return (
             <li className="list-inline-item mx-3" key={i}>
@@ -30,7 +39,7 @@ class ProjectDetailsModal extends Component {
             </li>
           );
         });
-        if (this.props.data.images) {
+        if (data.images) {
           var img = images.map((elem, i) => {
             return (
               <div
@@ -43,9 +52,9 @@ class ProjectDetailsModal extends Component {
       }
     }
 
-    const labels = this.props.visitLabels || {};
+    const labels = visitLabels || {};
+    const resolvedImpactLabels = impactLabels || labels.project_impact || {};
     const visitLive = labels.visit_live || "Visit live platform";
-    const visitCorporate = labels.visit_corporate || "Visit site";
     const visitCorporateNote =
       labels.visit_corporate_note ||
       "Corporate login required — public access is not available.";
@@ -57,10 +66,15 @@ class ProjectDetailsModal extends Component {
     const isOffline = access === "offline";
     const isCorporate = access === "corporate";
     const canVisit = Boolean(url) && !isOffline;
+    const impactMetrics = data && data.impact_metrics;
+    const impactDetail = data && data.impact_detail;
+    const availabilityNote =
+      (impactDetail && impactDetail.availability_note) ||
+      (isCorporate ? visitCorporateNote : "");
 
     return (
       <Modal
-        {...this.props}
+        {...modalProps}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -102,7 +116,7 @@ class ProjectDetailsModal extends Component {
           <div className="col-md-10 mx-auto modal-project-body">
             <h3 className="modal-project-title">{title}</h3>
 
-            {canVisit ? (
+            {canVisit && !isCorporate ? (
               <div className="modal-visit">
                 <a
                   href={url}
@@ -111,17 +125,18 @@ class ProjectDetailsModal extends Component {
                   className="btn btn-primary modal-visit-btn"
                 >
                   <i
-                    className={`fas ${
-                      isCorporate ? "fa-lock" : "fa-external-link-alt"
-                    }`}
+                    className="fas fa-external-link-alt"
                     aria-hidden="true"
                   ></i>
-                  <span>{isCorporate ? visitCorporate : visitLive}</span>
+                  <span>{visitLive}</span>
                 </a>
-                {isCorporate ? (
-                  <p className="modal-visit-note">{visitCorporateNote}</p>
-                ) : null}
               </div>
+            ) : null}
+
+            {isCorporate && availabilityNote ? (
+              <p className="modal-visit-note" role="note">
+                {availabilityNote}
+              </p>
             ) : null}
 
             {isOffline ? (
@@ -134,7 +149,13 @@ class ProjectDetailsModal extends Component {
               </div>
             ) : null}
 
+            <ProjectImpactMetrics metrics={impactMetrics} />
             <p className="modal-description">{description}</p>
+            <ProjectImpactDetail
+              detail={impactDetail}
+              labels={resolvedImpactLabels}
+              hideOutcomes={Boolean(impactMetrics && impactMetrics.length)}
+            />
             <div className="col-md-12 text-center">
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
