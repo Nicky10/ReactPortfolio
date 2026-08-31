@@ -90,6 +90,11 @@
         "level": "75"
       },
       {
+        "name": "NLP",
+        "class": "fas fa-language",
+        "level": "75"
+      },
+      {
         "name": "scikit-learn",
         "class": "devicon-sklearn-plain",
         "level": "70"

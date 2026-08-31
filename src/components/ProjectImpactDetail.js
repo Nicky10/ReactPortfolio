@@ -4,6 +4,8 @@ export default function ProjectImpactDetail({
   detail,
   labels = {},
   hideOutcomes = false,
+  hideTechnologies = false,
+  hideIntegrations = false,
 }) {
   if (!detail) return null;
 
@@ -34,7 +36,7 @@ export default function ProjectImpactDetail({
           <p>{detail.delivery}</p>
         </>
       ) : null}
-      {detail.technologies && detail.technologies.length ? (
+      {!hideTechnologies && detail.technologies && detail.technologies.length ? (
         <>
           <h4>{technologies}</h4>
           <ul className="project-impact-detail__chips">
@@ -44,7 +46,7 @@ export default function ProjectImpactDetail({
           </ul>
         </>
       ) : null}
-      {detail.integrations && detail.integrations.length ? (
+      {!hideIntegrations && detail.integrations && detail.integrations.length ? (
         <>
           <h4>{integrations}</h4>
           <ul className="project-impact-detail__chips">

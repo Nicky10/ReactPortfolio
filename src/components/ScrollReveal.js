@@ -29,10 +29,7 @@ class ScrollReveal extends Component {
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.setState({ visible: true });
-            this.observer.unobserve(entry.target);
-          }
+          this.setState({ visible: entry.isIntersecting });
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
@@ -61,7 +58,7 @@ class ScrollReveal extends Component {
           reduced
             ? { duration: 0 }
             : {
-                delay: delay / 1000,
+                delay: visible ? delay / 1000 : 0,
                 duration: 0.65,
                 ease: [0.22, 1, 0.36, 1],
               }

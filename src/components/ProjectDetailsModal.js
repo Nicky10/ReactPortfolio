@@ -6,6 +6,7 @@ import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 import ProjectImpactMetrics from "./ProjectImpactMetrics";
 import ProjectImpactDetail from "./ProjectImpactDetail";
+import TechStack from "./TechStack";
 
 class ProjectDetailsModal extends Component {
   render() {
@@ -13,6 +14,7 @@ class ProjectDetailsModal extends Component {
       data,
       visitLabels,
       impactLabels,
+      stackLabels,
       ...modalProps
     } = this.props;
 
@@ -68,6 +70,8 @@ class ProjectDetailsModal extends Component {
     const canVisit = Boolean(url) && !isOffline;
     const impactMetrics = data && data.impact_metrics;
     const impactDetail = data && data.impact_detail;
+    const techStack = data && data.tech_stack;
+    const resolvedStackLabels = stackLabels || labels.tech_stack || {};
     const availabilityNote =
       (impactDetail && impactDetail.availability_note) ||
       (isCorporate ? visitCorporateNote : "");
@@ -155,10 +159,16 @@ class ProjectDetailsModal extends Component {
               detail={impactDetail}
               labels={resolvedImpactLabels}
               hideOutcomes={Boolean(impactMetrics && impactMetrics.length)}
+              hideTechnologies={Boolean(techStack)}
+              hideIntegrations={Boolean(techStack && techStack.integrations)}
             />
-            <div className="col-md-12 text-center">
-              <ul className="list-inline mx-auto">{tech}</ul>
-            </div>
+            {techStack ? (
+              <TechStack stack={techStack} labels={resolvedStackLabels} />
+            ) : (
+              <div className="col-md-12 text-center">
+                <ul className="list-inline mx-auto">{tech}</ul>
+              </div>
+            )}
           </div>
         </div>
       </Modal>

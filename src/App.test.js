@@ -98,3 +98,59 @@ it("keeps published content when a language request fails", () => {
     "mailto:nicolas.felipedelgado@gmail.com"
   );
 });
+
+it("places Delivery & Integrations immediately after About", () => {
+  const shared = {
+    basic_info: {
+      name: "Nicolas Delgado",
+      social: [],
+    },
+  };
+  const english = {
+    basic_info: {
+      description_header: "Hi",
+      description: "Intro",
+      section_name: {
+        about: "About me",
+        projects: "Work",
+        skills: "Skills",
+        certificates: "Certs",
+        experience: "Experience",
+        delivery: "Delivery & integrations",
+      },
+      ui: { nav: {} },
+    },
+    projects: [],
+    certificates: [],
+    experience: [],
+    delivery_capabilities: {
+      lead: "How work is delivered",
+      approach_title: "Delivery approach",
+      approach: [
+        { id: "discovery", title: "Product discovery with stakeholders", body: "Clarify." },
+      ],
+      systems_title: "Systems",
+      systems: [],
+      production_title: "Production",
+      production: [],
+    },
+  };
+
+  $.ajax.mockImplementation((opts) => {
+    const url = String(opts.url);
+    if (url.indexOf("portfolio_shared_data") !== -1) {
+      opts.success(shared);
+      return;
+    }
+    opts.success(english);
+  });
+
+  const { container, getByText } = render(<App />);
+  const about = container.querySelector("#about");
+  const delivery = container.querySelector("#delivery-capabilities");
+  const projects = container.querySelector("#portfolio");
+
+  expect(getByText("Delivery & integrations")).toBeInTheDocument();
+  expect(about.compareDocumentPosition(delivery) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(delivery.compareDocumentPosition(projects) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+});

@@ -54,6 +54,8 @@
       "footer_tagline": "Open to full-stack roles and product-minded engineering teams.",
       "featured": "Featured",
       "project_details": "View details",
+      "skills_used_in": "Used in",
+      "skills_unused": "Not listed on a published project",
       "visit_live": "Visit live platform",
       "visit_corporate": "Visit site",
       "visit_corporate_note": "Corporate login required — public access is not available.",
@@ -90,6 +92,14 @@
         "technologies": "Technologies",
         "integrations": "Integrations",
         "outcomes": "Verified outcomes"
+      },
+      "tech_stack": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "scoring": "Scoring / AI",
+        "storage": "Storage",
+        "database": "Database",
+        "integrations": "External integrations"
       }
     }
   },
@@ -163,13 +173,31 @@
           }
         ],
         "availability_note": "Corporate login required — public access is not available."
+      },
+      "tech_stack": {
+        "frontend": [
+          "Next.js",
+          "TypeScript"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "storage": [
+          "Amazon S3"
+        ],
+        "database": [
+          "PostgreSQL"
+        ],
+        "integrations": [
+          "Stripe"
+        ]
       }
     },
     {
       "title": "PIE Placement Exam Platform",
       "startDate": "2025",
       "featured": true,
-      "description": "Built a full language placement product: consent and identity verification, multi-section exams (listening, reading, writing, speaking), results and verifiable certificates, admin tooling, and i18n. Paired with a FastAPI + scikit-learn scoring service for CEFR/DELF-oriented level prediction and rubric breakdowns — used in production for PIE language assessment.",
+      "description": "Built a full language placement product: consent and identity verification, multi-section exams (listening, reading, writing, speaking), results and verifiable certificates, admin tooling, and i18n. Scoring is a FastAPI linguistic-AI layer: it analyzes writing and speaking transcriptions against DELF/CEFR rubrics — language detection, grammar, lexicon, and coherence. Adaptive routing is a performance-based difficulty algorithm, not classic IRT. The final CEFR level is decided by explicit rules across the four skills, not a black-box model.",
       "images": [
         "images/portfolio/pie-placement/pie-placement-test.png"
       ],
@@ -194,6 +222,14 @@
         {
           "class": "devicon-fastapi-plain",
           "name": "FastAPI"
+        },
+        {
+          "class": "fas fa-language",
+          "name": "NLP"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
       ],
       "impact_metrics": [
@@ -206,17 +242,18 @@
       "impact_detail": {
         "sanitized": false,
         "problem": "Language programs needed a reliable way to place learners with automated assessment, scoring, and results instead of manual evaluation.",
-        "ownership": "Built and launched the placement-testing platform end-to-end, including assessment flows and the scoring service used in production.",
-        "delivery": "A full placement product with multi-section exams, automated scoring, results, and operational workflows used weekly by learners.",
+        "ownership": "Built and launched the placement-testing platform end-to-end, including assessment flows and the linguistic scoring service used in production.",
+        "delivery": "A full placement product: multi-section exams, rubric scoring of text and transcriptions, performance-based adaptive difficulty, and an explicit four-skill CEFR decision — used weekly by learners.",
         "technologies": [
           "React",
           "TypeScript",
           "NestJS",
           "Python",
-          "FastAPI"
+          "FastAPI",
+          "NLP"
         ],
         "integrations": [
-          "FastAPI scoring service",
+          "FastAPI linguistic scoring service",
           "exam and results workflows"
         ],
         "outcomes": [
@@ -224,6 +261,27 @@
             "value": "100+",
             "label": "users per week"
           }
+        ]
+      },
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Vite"
+        ],
+        "backend": [
+          "NestJS",
+          "Python",
+          "FastAPI",
+          "Pydantic"
+        ],
+        "scoring": [
+          "CEFR/DELF rubrics",
+          "Rule-based NLP",
+          "Adaptive difficulty"
+        ],
+        "database": [
+          "PostgreSQL"
         ]
       }
     },
@@ -257,8 +315,28 @@
         {
           "class": "devicon-react-plain",
           "name": "React Query"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "Next.js",
+          "TypeScript",
+          "React Query"
+        ],
+        "storage": [
+          "Firebase"
+        ],
+        "integrations": [
+          "Google APIs"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Immiland Foundation",
@@ -290,8 +368,26 @@
         {
           "class": "fab fa-stripe",
           "name": "Stripe"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Consultation Booking Platform",
@@ -323,8 +419,28 @@
         {
           "class": "devicon-google-plain",
           "name": "Google Calendar"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "integrations": [
+          "Stripe",
+          "Google Calendar"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "CRS Calculator & Dashboard",
@@ -352,8 +468,25 @@
         {
           "class": "devicon-nestjs-plain",
           "name": "NestJS"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Immiland Flow — Client Purchases",
@@ -385,6 +518,10 @@
         {
           "class": "fab fa-stripe",
           "name": "Stripe"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
       ],
       "impact_metrics": [
@@ -393,7 +530,23 @@
           "value": "$10K+",
           "label": "additional monthly revenue from payment workflows"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Immiland Management App",
@@ -423,7 +576,19 @@
           "class": "devicon-tailwindcss-original",
           "name": "Tailwind"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "Tailwind"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Cinerama",
@@ -449,7 +614,18 @@
           "class": "devicon-mongodb-plain",
           "name": "MongoDB"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "database": [
+          "MongoDB"
+        ]
+      }
     }
   ],
   "certificates": [
@@ -721,7 +897,8 @@
       "summary": "GPA 3.7 — computer science fundamentals, software architecture, and machine learning foundations.",
       "highlights": [
         "Completed bachelor’s degree in Computer Engineering (GPA 3.7).",
-        "Strong foundation in algorithms, OOP, databases, and software architecture."
+        "Strong foundation in algorithms, OOP, databases, and software architecture.",
+        "Applied machine learning on academic projects with scikit-learn and TensorFlow."
       ],
       "technologies": [
         "Python",
@@ -729,6 +906,8 @@
         "C++",
         "Software Architecture",
         "Machine Learning",
+        "scikit-learn",
+        "TensorFlow",
         "Databases"
       ]
     }

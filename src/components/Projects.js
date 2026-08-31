@@ -4,6 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 import MotionCard from "./MotionCard";
 import SectionAura from "./SectionAura";
 import ProjectImpactMetrics from "./ProjectImpactMetrics";
+import TechStack from "./TechStack";
 
 class Projects extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Projects extends Component {
       projectsLead = ui.projects_lead || "";
       var featuredLabel = ui.featured || "Featured";
       var detailsLabel = ui.project_details || "View details";
+      var stackLabels = ui.tech_stack || {};
       projects = this.props.resumeProjects.map(function (project, index) {
         const techs = project.technologies || [];
         const techPreview = techs.map((t) => t.name).join(" · ");
@@ -60,7 +62,13 @@ class Projects extends Component {
               <div className="project-card__body">
                 <span className="project-card__date">{project.startDate}</span>
                 <h3>{project.title}</h3>
-                {techPreview ? (
+                {project.tech_stack ? (
+                  <TechStack
+                    stack={project.tech_stack}
+                    labels={stackLabels}
+                    compact
+                  />
+                ) : techPreview ? (
                   <p className="project-card__tech">{techPreview}</p>
                 ) : null}
                 <p className="project-card__excerpt">{description}</p>
@@ -82,7 +90,7 @@ class Projects extends Component {
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="section-heading">
-              <span className="section-heading__index">02</span>
+              <span className="section-heading__index">03</span>
               {sectionName}
             </h2>
             <p className="section-lead">{projectsLead}</p>
@@ -102,6 +110,12 @@ class Projects extends Component {
               (this.props.resumeBasicInfo &&
                 this.props.resumeBasicInfo.ui &&
                 this.props.resumeBasicInfo.ui.project_impact) ||
+              {}
+            }
+            stackLabels={
+              (this.props.resumeBasicInfo &&
+                this.props.resumeBasicInfo.ui &&
+                this.props.resumeBasicInfo.ui.tech_stack) ||
               {}
             }
           />

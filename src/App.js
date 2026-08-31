@@ -255,10 +255,6 @@ class App extends Component {
             sharedBasicInfo={this.state.sharedData.basic_info}
             resumeHref={resumeHref}
           />
-          <Projects
-            resumeProjects={this.state.resumeData.projects}
-            resumeBasicInfo={resumeBasicInfo}
-          />
           <DeliveryCapabilities
             content={this.state.resumeData.delivery_capabilities}
             sectionName={
@@ -267,9 +263,14 @@ class App extends Component {
               resumeBasicInfo.section_name.delivery
             }
           />
+          <Projects
+            resumeProjects={this.state.resumeData.projects}
+            resumeBasicInfo={resumeBasicInfo}
+          />
           <Skills
             sharedSkills={this.state.sharedData.skills}
             resumeBasicInfo={resumeBasicInfo}
+            resumeProjects={this.state.resumeData.projects}
           />
           <Certificates
             resumeCertificates={this.state.resumeData.certificates}

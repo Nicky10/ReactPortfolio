@@ -13,7 +13,7 @@ I design and ship production platforms — TypeScript, NestJS, React/Next.js, pa
 | Project | What it is |
 | --- | --- |
 | [Immiland Sign](https://immiland-sign-384917653933.us-central1.run.app/) | Multi-tenant e-signature platform — templates, workflows, audit trails, Stripe Connect |
-| [PIE Placement](https://app.planetaimmilandeducation.com/) | Language placement exams with FastAPI / scikit-learn scoring |
+| [PIE Placement](https://app.planetaimmilandeducation.com/) | Language placement with FastAPI linguistic scoring — DELF/CEFR rubrics, adaptive difficulty, explicit four-skill rules |
 | [Affiliate Hub](https://affiliates-pie-615391055837.us-central1.run.app/) | Partner portal for agencies — leads, progress, invoicing, Google Sheets + AI helpers |
 | [Immiland Foundation](https://immilandfoundation.com/) | Humanitarian portal — missions, donations, transparency dashboards |
 | [Consultation Booking](https://en.immilandcanada.com/law/revision-previa-a-envio) | Scheduling with Google Calendar sync and Stripe payments |

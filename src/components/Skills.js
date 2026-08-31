@@ -2,22 +2,47 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import SectionAura from "./SectionAura";
+import { projectsForSkill } from "./skillProjects";
 
 class Skills extends Component {
   render() {
+    var sectionName;
+    var skills;
+    var usedInLabel = "Used in";
+    var unusedLabel = "Not listed on a published project";
+    var projects = this.props.resumeProjects || [];
+
     if (this.props.sharedSkills && this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.skills;
-      var skills = this.props.sharedSkills.icons.map(function (skill, i) {
+      sectionName = this.props.resumeBasicInfo.section_name.skills;
+      const ui = this.props.resumeBasicInfo.ui || {};
+      usedInLabel = ui.skills_used_in || usedInLabel;
+      unusedLabel = ui.skills_unused || unusedLabel;
+      skills = this.props.sharedSkills.icons.map(function (skill, i) {
+        const related = projectsForSkill(skill.name, projects);
+        const tooltipId = "skill-tip-" + i;
+
         return (
           <motion.li
             className="skill-chip"
-            key={i}
+            key={skill.name}
+            tabIndex="0"
+            aria-describedby={tooltipId}
             whileHover={{ y: -6, scale: 1.06 }}
             whileTap={{ scale: 0.96 }}
             transition={{ type: "spring", stiffness: 340, damping: 18 }}
           >
             <i className={skill.class} aria-hidden="true" />
             <span>{skill.name}</span>
+            <div id={tooltipId} className="skill-chip__tooltip" role="tooltip">
+              <strong>{related.length ? usedInLabel : unusedLabel}</strong>
+              {related.length ? (
+                <ul>
+                  {related.map(function (title) {
+                    return <li key={title}>{title}</li>;
+                  })}
+                </ul>
+              ) : null}
+            </div>
           </motion.li>
         );
       });

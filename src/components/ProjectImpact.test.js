@@ -1,10 +1,11 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import Projects from "./Projects";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 import ProjectImpactMetrics from "./ProjectImpactMetrics";
 import DeliveryCapabilities from "./DeliveryCapabilities";
 import ScrollReveal from "./ScrollReveal";
+import TechStack from "./TechStack";
 
 const basicInfo = {
   section_name: { projects: "Featured work" },
@@ -22,6 +23,14 @@ const basicInfo = {
       integrations: "Integrations",
       outcomes: "Verified outcomes",
     },
+    tech_stack: {
+      frontend: "Frontend",
+      backend: "Backend",
+      scoring: "Scoring / AI",
+      storage: "Storage",
+      database: "Database",
+      integrations: "External integrations",
+    },
   },
 };
 
@@ -34,6 +43,13 @@ const signProject = {
   url: "https://example.invalid/sign",
   access: "corporate",
   technologies: [{ class: "devicon-nextjs-plain", name: "Next.js" }],
+  tech_stack: {
+    frontend: ["Next.js", "TypeScript"],
+    backend: ["NestJS"],
+    storage: ["Amazon S3"],
+    database: ["PostgreSQL"],
+    integrations: ["Stripe"],
+  },
   impact_metrics: [
     { id: "sign_savings", value: "~$20K", label: "annual operating cost savings" },
     {
@@ -235,4 +251,118 @@ it("skips nonessential scroll motion when reduced motion is requested", () => {
   expect(getByText("Readable without waiting")).toBeInTheDocument();
   expect(container.querySelector(".reveal.is-visible")).toBeTruthy();
   window.matchMedia = originalMatchMedia;
+});
+
+it("replays reveal motion when a section re-enters the viewport", () => {
+  const OriginalObserver = window.IntersectionObserver;
+  const originalMatchMedia = window.matchMedia;
+  let observerCallback;
+  window.IntersectionObserver = class {
+    constructor(callback) {
+      observerCallback = callback;
+    }
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+  window.matchMedia = jest.fn().mockImplementation(() => ({
+    matches: false,
+    media: "",
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+  }));
+
+  const { container } = render(
+    <ScrollReveal>
+      <p>Replay target</p>
+    </ScrollReveal>
+  );
+  const node = container.querySelector(".reveal");
+
+  act(() => {
+    observerCallback([{ isIntersecting: true, target: node }]);
+  });
+  expect(node.classList.contains("is-visible")).toBe(true);
+
+  act(() => {
+    observerCallback([{ isIntersecting: false, target: node }]);
+  });
+  expect(node.classList.contains("is-visible")).toBe(false);
+
+  act(() => {
+    observerCallback([{ isIntersecting: true, target: node }]);
+  });
+  expect(node.classList.contains("is-visible")).toBe(true);
+
+  window.IntersectionObserver = OriginalObserver;
+  window.matchMedia = originalMatchMedia;
+});
+
+it("renders a scoring category when present", () => {
+  const { getByText, container } = render(
+    <TechStack
+      stack={{
+        backend: ["Python", "FastAPI"],
+        scoring: ["CEFR/DELF rubrics", "Rule-based NLP"],
+      }}
+      labels={{
+        backend: "Backend",
+        scoring: "Scoring / AI",
+      }}
+    />
+  );
+
+  expect(getByText("Scoring / AI")).toBeInTheDocument();
+  expect(getByText("Rule-based NLP")).toBeInTheDocument();
+  expect(container.querySelectorAll(".tech-stack__group").length).toBe(2);
+});
+
+it("renders populated technology categories and omits empty ones", () => {
+  const { getByText, queryByText, container } = render(
+    <TechStack
+      stack={{
+        frontend: ["Next.js"],
+        backend: ["NestJS"],
+        storage: ["Amazon S3"],
+        database: ["PostgreSQL"],
+        integrations: ["Stripe"],
+      }}
+      labels={{
+        frontend: "Frontend",
+        backend: "Backend",
+        storage: "Storage",
+        database: "Database",
+        integrations: "External integrations",
+      }}
+    />
+  );
+
+  expect(getByText("Frontend")).toBeInTheDocument();
+  expect(getByText("Amazon S3")).toBeInTheDocument();
+  expect(getByText("External integrations")).toBeInTheDocument();
+  expect(queryByText("empty")).not.toBeInTheDocument();
+  expect(container.querySelectorAll(".tech-stack__group").length).toBe(5);
+});
+
+it("does not render an empty technology category area", () => {
+  const { container } = render(
+    <TechStack stack={{ frontend: [], backend: [] }} labels={{ frontend: "Frontend" }} />
+  );
+  expect(container.querySelector(".tech-stack")).toBeNull();
+});
+
+it("shows categorized stacks on project cards instead of a flat list", () => {
+  const { getByText, queryByText } = render(
+    <Projects
+      resumeProjects={[signProject]}
+      resumeBasicInfo={basicInfo}
+    />
+  );
+
+  expect(getByText("Frontend")).toBeInTheDocument();
+  expect(getByText("Storage")).toBeInTheDocument();
+  expect(getByText("Amazon S3")).toBeInTheDocument();
+  expect(queryByText("Next.js · NestJS")).not.toBeInTheDocument();
 });

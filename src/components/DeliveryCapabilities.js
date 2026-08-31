@@ -43,7 +43,7 @@ export default function DeliveryCapabilities({ content, sectionName }) {
       <div className="container-narrow">
         <ScrollReveal>
           <h2 className="section-heading section-heading--light">
-            <span className="section-heading__index">03</span>
+            <span className="section-heading__index">02</span>
             {sectionName || "Delivery & integrations"}
           </h2>
           <p className="section-lead section-lead--light">{content.lead}</p>
