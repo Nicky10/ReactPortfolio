@@ -29,7 +29,7 @@ class Skills extends Component {
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="section-heading section-heading--light">
-              <span className="section-heading__index">03</span>
+              <span className="section-heading__index">05</span>
               {sectionName}
             </h2>
           </ScrollReveal>

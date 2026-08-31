@@ -30,6 +30,7 @@ class Projects extends Component {
       projectsLead = ui.projects_lead || "";
       var featuredLabel = ui.featured || "Featured";
       var detailsLabel = ui.project_details || "View details";
+      var caseStudyBadge = this.props.caseStudyBadge || "Case study";
       projects = this.props.resumeProjects.map(function (project, index) {
         const techs = project.technologies || [];
         const techPreview = techs.map((t) => t.name).join(" · ");
@@ -52,7 +53,11 @@ class Projects extends Component {
                   src={`${process.env.PUBLIC_URL}/` + project.images[0]}
                   alt={project.title}
                 />
-                {project.featured ? (
+                {project.caseStudy ? (
+                  <span className="project-card__badge project-card__badge--case">
+                    {caseStudyBadge}
+                  </span>
+                ) : project.featured ? (
                   <span className="project-card__badge">{featuredLabel}</span>
                 ) : null}
               </div>
@@ -80,7 +85,7 @@ class Projects extends Component {
         <div className="container-narrow">
           <ScrollReveal>
             <h2 className="section-heading">
-              <span className="section-heading__index">02</span>
+              <span className="section-heading__index">04</span>
               {sectionName}
             </h2>
             <p className="section-lead">{projectsLead}</p>

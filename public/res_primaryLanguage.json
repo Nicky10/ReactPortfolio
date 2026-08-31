@@ -4,7 +4,7 @@
     "description": "I'm Nicolas Delgado, a dynamic full-stack software engineer based in Toronto. I build and support high-quality technical solutions across product platforms and enterprise environments — from TypeScript/Node.js systems and PostgreSQL/MongoDB data layers to workflow automation, third-party integrations, and AI evaluation work. Experienced in Agile delivery with cross-functional teams, I care about clear UX, reliable APIs, and systems that scale with real business complexity. I work in Spanish, English, and French.",
     "highlights": [
       {
-        "value": "3+",
+        "value": "4+",
         "label": "years of professional experience"
       },
       {
@@ -26,7 +26,9 @@
       "projects": "Featured work",
       "skills": "Skills",
       "certificates": "Certificates",
-      "experience": "Experience & education"
+      "experience": "Experience & education",
+      "case_studies": "Selected case studies",
+      "delivery": "Delivery & integrations"
     },
     "ui": {
       "nav": {
@@ -36,7 +38,9 @@
         "certs": "Certs",
         "experience": "Experience",
         "contact": "Contact",
-        "resume": "Resume"
+        "resume": "Resume",
+        "case_studies": "Cases",
+        "delivery": "Delivery"
       },
       "hero": {
         "eyebrow": "Software Engineer",
@@ -73,6 +77,13 @@
         "required": "Please enter your name and email.",
         "error": "Something went wrong. Please try again or email nicolas.felipedelgado@gmail.com.",
         "missingEndpoint": "Contact form is almost ready. Meanwhile, email nicolas.felipedelgado@gmail.com."
+      },
+      "load_error": {
+        "title": "Content couldn’t load",
+        "body": "The portfolio content didn’t load. You can try again, or email me directly.",
+        "language_body": "That language couldn’t load. Your current page was left unchanged.",
+        "retry": "Try again",
+        "contact": "Email Nicolas"
       }
     }
   },
@@ -108,7 +119,8 @@
           "class": "fab fa-stripe",
           "name": "Stripe"
         }
-      ]
+      ],
+      "caseStudy": true
     },
     {
       "title": "PIE Placement Exam Platform",
@@ -140,7 +152,8 @@
           "class": "devicon-fastapi-plain",
           "name": "FastAPI"
         }
-      ]
+      ],
+      "caseStudy": true
     },
     {
       "title": "Affiliate & Agency Partner Hub",
@@ -640,5 +653,237 @@
         "Databases"
       ]
     }
-  ]
+  ],
+  "positioning": {
+    "impact": {
+      "eyebrow": "Verified impact",
+      "title": "Outcomes recruiters can check",
+      "metrics": [
+        {
+          "id": "experience",
+          "value": "4+",
+          "label": "years of commercial experience"
+        },
+        {
+          "id": "pie_users",
+          "value": "100+",
+          "label": "PIE users per week"
+        },
+        {
+          "id": "sign_savings",
+          "value": "~$20K",
+          "label": "Immiland Sign annual cost savings"
+        },
+        {
+          "id": "revenue",
+          "value": "$10K+",
+          "label": "additional monthly revenue from payment workflows"
+        }
+      ]
+    },
+    "role_paths": {
+      "eyebrow": "Hiring path",
+      "title": "Go to the evidence for your role",
+      "lead": "Jump to the case studies and delivery capabilities most relevant to the role you are hiring for. The rest of the portfolio stays available.",
+      "paths": [
+        {
+          "id": "full-stack",
+          "title": "Full-stack product engineering",
+          "description": "End-to-end product delivery across user-facing applications and services.",
+          "cta": "View product evidence",
+          "target": "case-studies"
+        },
+        {
+          "id": "backend",
+          "title": "Backend and integrations engineering",
+          "description": "APIs, payments, automation, data, and production operations.",
+          "cta": "View delivery evidence",
+          "target": "delivery-capabilities"
+        }
+      ]
+    }
+  },
+  "recruiter_cta": {
+    "hiring_focus": "Hiring focus: full-stack, platform, and integrations engineering",
+    "title": "Next step for hiring teams",
+    "lead": "Review the resume, open a conversation, or check public professional profiles.",
+    "availability": "Open to full-stack roles and product-minded engineering teams.",
+    "resume": "Download resume",
+    "contact": "Contact Nicolas",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "case_studies": {
+    "lead": "Two published examples with ownership, delivery, and verified outcomes. Immiland Sign is summarized at an approved high level because the live product is corporate-only.",
+    "badge": "Case study",
+    "open": "View case study",
+    "labels": {
+      "problem": "Business problem",
+      "ownership": "Ownership",
+      "delivery": "Delivered capability",
+      "technologies": "Technologies",
+      "integrations": "Integrations",
+      "outcomes": "Verified outcomes"
+    },
+    "items": [
+      {
+        "id": "immiland-sign",
+        "projectTitle": "Immiland Sign",
+        "title": "Immiland Sign",
+        "sanitized": true,
+        "access": "corporate",
+        "image": "images/portfolio/immiland-sign/immiland-sign.png",
+        "problem": "The organization needed a lower-cost way to run document signing in production without remaining dependent on a third-party e-signature vendor.",
+        "ownership": "Primary author with end-to-end ownership of the web application and API, from technical design through testing, deployment, monitoring, and production support.",
+        "delivery": "A production e-signature product covering templates, signing workflows, and payment collection on contracts.",
+        "technologies": [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "outcomes": [
+          {
+            "value": "~$20K",
+            "label": "annual operating cost savings"
+          },
+          {
+            "value": "35%",
+            "label": "document-processing productivity improvement"
+          }
+        ],
+        "availability_note": "Corporate login required — public access is not available."
+      },
+      {
+        "id": "pie-placement",
+        "projectTitle": "PIE Placement Exam Platform",
+        "title": "PIE Placement Exam Platform",
+        "sanitized": false,
+        "access": "public",
+        "image": "images/portfolio/pie-placement/pie-placement-test.png",
+        "url": "https://app.planetaimmilandeducation.com/",
+        "problem": "Language programs needed a reliable way to place learners with automated assessment, scoring, and results instead of manual evaluation.",
+        "ownership": "Built and launched the placement-testing platform end-to-end, including assessment flows and the scoring service used in production.",
+        "delivery": "A full placement product with multi-section exams, automated scoring, results, and operational workflows used weekly by learners.",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "NestJS",
+          "Python",
+          "FastAPI"
+        ],
+        "integrations": [
+          "FastAPI scoring service",
+          "exam and results workflows"
+        ],
+        "outcomes": [
+          {
+            "value": "100+",
+            "label": "users per week"
+          }
+        ]
+      }
+    ]
+  },
+  "delivery_capabilities": {
+    "lead": "How production software moves from an ambiguous request to a maintained service — without confidential architecture or private credentials.",
+    "approach_title": "Delivery approach",
+    "approach": [
+      {
+        "title": "Product discovery with stakeholders",
+        "body": "Clarify ambiguous requirements with business stakeholders, prioritize high-impact work, and iterate from idea to maintained production software."
+      },
+      {
+        "title": "System and API design",
+        "body": "Design REST APIs, data models, and webhook-driven contracts so product, payments, and operations systems can work together."
+      },
+      {
+        "title": "Full-stack delivery",
+        "body": "Ship features across React/Next.js, Node.js/NestJS, Python/FastAPI, and PostgreSQL, from implementation through testing and deployment."
+      },
+      {
+        "title": "Integrations and automation",
+        "body": "Connect payments, scheduling, communications, and business systems, and replace previously manual processes with automated workflows."
+      },
+      {
+        "title": "Production support",
+        "body": "Monitor, troubleshoot, and maintain frontend, backend, integration, and data layers after release."
+      }
+    ],
+    "systems_title": "Systems and integrations",
+    "systems": [
+      {
+        "id": "payments",
+        "title": "Payments",
+        "entries": [
+          "Stripe",
+          "Stripe Connect",
+          "PayU",
+          "PayPal"
+        ]
+      },
+      {
+        "id": "apis",
+        "title": "APIs and webhooks",
+        "entries": [
+          "REST APIs",
+          "Webhook-driven workflows",
+          "Scheduled/background jobs"
+        ]
+      },
+      {
+        "id": "scheduling",
+        "title": "Scheduling and communications",
+        "entries": [
+          "Scheduling integrations",
+          "Communications automation"
+        ]
+      },
+      {
+        "id": "data",
+        "title": "Data",
+        "entries": [
+          "PostgreSQL",
+          "Schema design and migrations",
+          "SQL/JSONB operations"
+        ]
+      },
+      {
+        "id": "platforms",
+        "title": "Delivery platforms",
+        "entries": [
+          "Docker",
+          "GitHub Actions",
+          "Cloud Run",
+          "DigitalOcean"
+        ]
+      }
+    ],
+    "production_title": "Production engineering",
+    "production": [
+      {
+        "title": "Containerized delivery",
+        "body": "Dockerized services for consistent build and runtime environments."
+      },
+      {
+        "title": "Automated checks",
+        "body": "GitHub Actions CI/CD with automated build, test, and type-check pipelines, plus quality gates."
+      },
+      {
+        "title": "Health and readiness checks",
+        "body": "Service health and readiness endpoints used in production deploys."
+      },
+      {
+        "title": "Monitoring and error tracking",
+        "body": "Sentry monitoring and production error visibility after release."
+      },
+      {
+        "title": "Production troubleshooting",
+        "body": "Investigate issues across frontend, backend, integrations, and data layers in live systems."
+      }
+    ]
+  }
 }

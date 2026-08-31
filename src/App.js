@@ -12,6 +12,25 @@ import Skills from "./components/Skills";
 import Certificates from "./components/Certificates";
 import ContactModal from "./components/ContactModal";
 import ClickBurst from "./components/ClickBurst";
+import ContentLoadError from "./components/ContentLoadError";
+import CaseStudies from "./components/CaseStudies";
+import DeliveryCapabilities from "./components/DeliveryCapabilities";
+
+function hasUsableResumeData(resumeData) {
+  return Boolean(resumeData && resumeData.basic_info);
+}
+
+function contactMailtoFromShared(sharedData) {
+  const social =
+    (sharedData && sharedData.basic_info && sharedData.basic_info.social) || [];
+  const mail = social.find(
+    (entry) =>
+      entry &&
+      (entry.name === "mail" ||
+        (typeof entry.url === "string" && entry.url.indexOf("mailto:") === 0))
+  );
+  return mail && mail.url ? mail.url : "";
+}
 
 class App extends Component {
   constructor(props) {
@@ -23,11 +42,16 @@ class App extends Component {
       contactOpen: false,
       isDark: false,
       controlsPinned: false,
+      sharedLoadError: false,
+      localizedLoadError: false,
+      pendingLocalizedPath: null,
+      pendingLanguage: null,
     };
     this.openContact = this.openContact.bind(this);
     this.closeContact = this.closeContact.bind(this);
     this.onThemeChange = this.onThemeChange.bind(this);
     this.handleControlsScroll = this.handleControlsScroll.bind(this);
+    this.retryContentLoad = this.retryContentLoad.bind(this);
   }
 
   openContact() {
@@ -55,16 +79,37 @@ class App extends Component {
   }
 
   applyPickedLanguage(pickedLanguage) {
-    document.documentElement.lang = pickedLanguage;
     var resumePath =
       pickedLanguage === window.$primaryLanguage
         ? `res_primaryLanguage.json`
         : `res_secondaryLanguage.json`;
-    this.setState({ language: pickedLanguage });
-    this.loadResumeFromPath(resumePath);
+    var keepCurrentLanguage = hasUsableResumeData(this.state.resumeData);
+    if (!keepCurrentLanguage) {
+      document.documentElement.lang = pickedLanguage;
+      this.setState({ language: pickedLanguage });
+    }
+    this.loadResumeFromPath(resumePath, pickedLanguage);
+  }
+
+  retryContentLoad() {
+    if (this.state.sharedLoadError) {
+      this.loadSharedData();
+    }
+    if (this.state.localizedLoadError) {
+      var path =
+        this.state.pendingLocalizedPath ||
+        (this.state.language === window.$primaryLanguage
+          ? `res_primaryLanguage.json`
+          : `res_secondaryLanguage.json`);
+      this.loadResumeFromPath(
+        path,
+        this.state.pendingLanguage || this.state.language
+      );
+    }
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.loadSharedData();
     this.applyPickedLanguage(window.$primaryLanguage);
     document.body.setAttribute("data-theme", "light");
@@ -76,21 +121,37 @@ class App extends Component {
   }
 
   componentWillUnmount() {
+    this._isMounted = false;
     window.removeEventListener("scroll", this.handleControlsScroll);
     window.removeEventListener("resize", this.handleControlsScroll);
   }
 
-  loadResumeFromPath(path) {
+  loadResumeFromPath(path, intendedLanguage) {
     $.ajax({
       url: `${process.env.PUBLIC_URL}/${path}`,
       dataType: "json",
       cache: false,
       success: function (data) {
-        this.setState({ resumeData: data });
+        if (!this._isMounted) return;
+        var nextLanguage = intendedLanguage || this.state.language;
+        this.setState({
+          resumeData: data,
+          language: nextLanguage,
+          localizedLoadError: false,
+          pendingLocalizedPath: null,
+          pendingLanguage: null,
+        });
+        document.documentElement.lang = nextLanguage;
       }.bind(this),
       error: function (xhr, status, err) {
         console.error(err);
-      },
+        if (!this._isMounted) return;
+        this.setState({
+          localizedLoadError: true,
+          pendingLocalizedPath: path,
+          pendingLanguage: intendedLanguage || this.state.language,
+        });
+      }.bind(this),
     });
   }
 
@@ -100,32 +161,74 @@ class App extends Component {
       dataType: "json",
       cache: false,
       success: function (data) {
-        this.setState({ sharedData: data });
-        document.title = `${this.state.sharedData.basic_info.name} — Portfolio`;
+        if (!this._isMounted) return;
+        this.setState({ sharedData: data, sharedLoadError: false });
+        document.title = `${data.basic_info.name} — Portfolio`;
       }.bind(this),
       error: function (xhr, status, err) {
         console.error(err);
-      },
+        if (!this._isMounted) return;
+        this.setState({ sharedLoadError: true });
+      }.bind(this),
     });
   }
 
   render() {
     const resumeBasicInfo = this.state.resumeData.basic_info;
     const ui = (resumeBasicInfo && resumeBasicInfo.ui) || {};
+    const loadErrorCopy = ui.load_error || {};
     const contactEndpoint =
       (this.state.sharedData.basic_info &&
         this.state.sharedData.basic_info.contact_form_endpoint) ||
       "";
+    const contactMailto = contactMailtoFromShared(this.state.sharedData);
     const resumeHref =
       this.state.sharedData.basic_info &&
       this.state.sharedData.basic_info.resume_pdf
         ? `${process.env.PUBLIC_URL}/${this.state.sharedData.basic_info.resume_pdf}`
         : "";
+    const usableLocalized = hasUsableResumeData(this.state.resumeData);
+    const blockingLoadError =
+      this.state.sharedLoadError ||
+      (this.state.localizedLoadError && !usableLocalized);
+    const languageSwitchError =
+      this.state.localizedLoadError && usableLocalized;
+
+    if (blockingLoadError) {
+      return (
+        <ContentLoadError
+          variant="page"
+          title={loadErrorCopy.title || "Content couldn’t load"}
+          body={
+            loadErrorCopy.body ||
+            "The portfolio content didn’t load. You can try again, or email me directly."
+          }
+          onRetry={this.retryContentLoad}
+          retryLabel={loadErrorCopy.retry || "Try again"}
+          contactHref={contactMailto}
+          contactLabel={loadErrorCopy.contact || "Email Nicolas"}
+        />
+      );
+    }
 
     return (
       <AnimateSharedLayout type="crossfade">
         <div className="app-shell">
           <ClickBurst />
+          {languageSwitchError ? (
+            <ContentLoadError
+              variant="banner"
+              title={loadErrorCopy.title || "Content couldn’t load"}
+              body={
+                loadErrorCopy.language_body ||
+                "That language couldn’t load. Your current page was left unchanged."
+              }
+              onRetry={this.retryContentLoad}
+              retryLabel={loadErrorCopy.retry || "Try again"}
+              contactHref={contactMailto}
+              contactLabel={loadErrorCopy.contact || "Email Nicolas"}
+            />
+          ) : null}
           <Navbar
             sharedBasicInfo={this.state.sharedData.basic_info}
             navLabels={ui.nav}
@@ -151,10 +254,39 @@ class App extends Component {
           <About
             resumeBasicInfo={resumeBasicInfo}
             sharedBasicInfo={this.state.sharedData.basic_info}
+            resumeHref={resumeHref}
+            positioning={this.state.resumeData.positioning}
+            recruiterCta={this.state.resumeData.recruiter_cta}
+            onContactClick={this.openContact}
+          />
+          <CaseStudies
+            content={this.state.resumeData.case_studies}
+            sectionName={
+              resumeBasicInfo &&
+              resumeBasicInfo.section_name &&
+              resumeBasicInfo.section_name.case_studies
+            }
+            recruiterCta={this.state.resumeData.recruiter_cta}
+            sharedBasicInfo={this.state.sharedData.basic_info}
+            resumeHref={resumeHref}
+            onContactClick={this.openContact}
+            visitLabels={ui}
+          />
+          <DeliveryCapabilities
+            content={this.state.resumeData.delivery_capabilities}
+            sectionName={
+              resumeBasicInfo &&
+              resumeBasicInfo.section_name &&
+              resumeBasicInfo.section_name.delivery
+            }
           />
           <Projects
             resumeProjects={this.state.resumeData.projects}
             resumeBasicInfo={resumeBasicInfo}
+            caseStudyBadge={
+              this.state.resumeData.case_studies &&
+              this.state.resumeData.case_studies.badge
+            }
           />
           <Skills
             sharedSkills={this.state.sharedData.skills}
