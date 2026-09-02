@@ -4,7 +4,7 @@
     "description": "Je m'appelle Nicolas Delgado, ingénieur logiciel full-stack dynamique basé à Toronto. Je conçois et maintiens des solutions techniques de qualité — plateformes TypeScript/Node.js, bases PostgreSQL/MongoDB, automatisation de workflows, intégrations tierces et évaluation d'IA. Habitué à l'Agile et au travail cross-fonctionnel, je privilégie une UX claire, des API fiables et des systèmes qui tiennent face à la complexité réelle du métier. Je travaille en espagnol, anglais et français.",
     "highlights": [
       {
-        "value": "3+",
+        "value": "4+",
         "label": "années d'expérience professionnelle"
       },
       {
@@ -26,7 +26,8 @@
       "projects": "Travaux phares",
       "skills": "Compétences",
       "certificates": "Certificats",
-      "experience": "Expérience et formation"
+      "experience": "Expérience et formation",
+      "delivery": "Livraison et intégrations"
     },
     "ui": {
       "nav": {
@@ -36,7 +37,8 @@
         "certs": "Certificats",
         "experience": "Expérience",
         "contact": "Contact",
-        "resume": "CV"
+        "resume": "CV",
+        "delivery": "Livraison"
       },
       "hero": {
         "eyebrow": "Ingénieur logiciel",
@@ -52,6 +54,8 @@
       "footer_tagline": "Ouvert aux rôles full-stack et aux équipes orientées produit.",
       "featured": "À la une",
       "project_details": "Voir les détails",
+      "skills_used_in": "Utilisé dans",
+      "skills_unused": "Non indiqué dans un projet publié",
       "visit_live": "Voir la plateforme",
       "visit_corporate": "Visiter le site",
       "visit_corporate_note": "Connexion corporative requise — l’accès public n’est pas disponible.",
@@ -73,6 +77,29 @@
         "required": "Veuillez indiquer votre nom et votre e-mail.",
         "error": "Une erreur est survenue. Réessayez ou écrivez à nicolas.felipedelgado@gmail.com.",
         "missingEndpoint": "Le formulaire est presque prêt. En attendant, écrivez à nicolas.felipedelgado@gmail.com."
+      },
+      "load_error": {
+        "title": "Le contenu n’a pas pu se charger",
+        "body": "Le contenu du portfolio n’est pas disponible. Vous pouvez réessayer ou m’écrire directement.",
+        "language_body": "Cette langue n’a pas pu se charger. Le contenu actuel n’a pas été remplacé.",
+        "retry": "Réessayer",
+        "contact": "Écrire à Nicolas"
+      },
+      "project_impact": {
+        "problem": "Problème métier",
+        "ownership": "Ownership",
+        "delivery": "Capacité livrée",
+        "technologies": "Technologies",
+        "integrations": "Intégrations",
+        "outcomes": "Résultats vérifiés"
+      },
+      "tech_stack": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "scoring": "Scoring / IA",
+        "storage": "Stockage",
+        "database": "Base de données",
+        "integrations": "Intégrations externes"
       }
     }
   },
@@ -81,7 +108,7 @@
       "title": "Immiland Sign",
       "startDate": "2025–2026",
       "featured": true,
-      "description": "Conception et développement d'une plateforme de signature électronique multi-tenant (style DocuSign) : designer de modèles PDF/DOCX, workflows séquentiels et parallèles, signature publique par jeton, piste d'audit chaînée, certificats de complétion, champs de paiement Stripe Connect, clés API, webhooks sortants et pont de migration DocuSign. Auteur principal du frontend Next.js et du backend NestJS, déployés sur Cloud Run.",
+      "description": "Conception et développement d'une plateforme de signature électronique en production : modèles, workflows de signature et encaissement sur les contrats. Auteur principal de l'application web et de l'API, de la conception technique jusqu'au support en production.",
       "images": [
         "images/portfolio/immiland-sign/immiland-sign.png"
       ],
@@ -108,13 +135,69 @@
           "class": "fab fa-stripe",
           "name": "Stripe"
         }
-      ]
+      ],
+      "impact_metrics": [
+        {
+          "id": "sign_savings",
+          "value": "~20 k$",
+          "label": "d'économies de coûts d'exploitation par an"
+        },
+        {
+          "id": "sign_productivity",
+          "value": "35 %",
+          "label": "de gain de productivité sur le traitement documentaire"
+        }
+      ],
+      "impact_detail": {
+        "sanitized": true,
+        "problem": "L'organisation avait besoin d'un moyen moins coûteux de faire signer des documents en production, sans rester dépendante d'un fournisseur d'e-signature tiers.",
+        "ownership": "Auteur principal, responsable de bout en bout de l'application web et de l'API, de la conception technique jusqu'au support en production.",
+        "delivery": "Un produit d'e-signature en production, avec modèles, workflows de signature et encaissement sur les contrats.",
+        "technologies": [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "outcomes": [
+          {
+            "value": "~20 k$",
+            "label": "d'économies de coûts d'exploitation par an"
+          },
+          {
+            "value": "35 %",
+            "label": "de gain de productivité sur le traitement documentaire"
+          }
+        ],
+        "availability_note": "Connexion corporative requise — l’accès public n’est pas disponible."
+      },
+      "tech_stack": {
+        "frontend": [
+          "Next.js",
+          "TypeScript"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "storage": [
+          "Amazon S3"
+        ],
+        "database": [
+          "PostgreSQL"
+        ],
+        "integrations": [
+          "Stripe"
+        ]
+      }
     },
     {
       "title": "Plateforme d'examen de placement PIE",
       "startDate": "2025",
       "featured": true,
-      "description": "Produit complet de placement linguistique : consentement et vérification d'identité, examens multi-sections (écoute, lecture, écriture, oral), résultats et certificats vérifiables, outils admin et i18n. Associé à un service FastAPI + scikit-learn pour la prédiction de niveau CEFR/DELF et le détail des rubriques — en production pour PIE.",
+      "description": "Produit complet de placement linguistique : consentement et vérification d'identité, examens multi-sections (écoute, lecture, écriture, oral), résultats et certificats vérifiables, outils admin et i18n. Le scoring est une couche d'IA linguistique FastAPI : elle analyse textes et transcriptions orales avec des rubriques DELF/CECRL — détection de langue, grammaire, lexique et cohérence. L'adaptatif n'est pas de l'IRT classique : c'est un algorithme de difficulté selon la performance. Le niveau final n'est pas une black box : des règles explicites le décident à partir des 4 compétences.",
       "images": [
         "images/portfolio/pie-placement/pie-placement-test.png"
       ],
@@ -139,8 +222,68 @@
         {
           "class": "devicon-fastapi-plain",
           "name": "FastAPI"
+        },
+        {
+          "class": "fas fa-language",
+          "name": "NLP"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "impact_metrics": [
+        {
+          "id": "pie_users",
+          "value": "100+",
+          "label": "utilisateurs par semaine"
+        }
+      ],
+      "impact_detail": {
+        "sanitized": false,
+        "problem": "Les programmes de langue avaient besoin d'un placement fiable, avec évaluation, scoring et résultats automatisés plutôt qu'un traitement manuel.",
+        "ownership": "Conception et mise en production de la plateforme de tests de placement, y compris les parcours d'évaluation et le service de scoring linguistique.",
+        "delivery": "Un produit de placement complet : examens multi-sections, scoring par rubriques sur textes et transcriptions, difficulté adaptative selon la performance, et décision CECRL explicite sur les 4 compétences — utilisé chaque semaine.",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "NestJS",
+          "Python",
+          "FastAPI",
+          "NLP"
+        ],
+        "integrations": [
+          "Service de scoring linguistique FastAPI",
+          "Workflows d'examen et de résultats"
+        ],
+        "outcomes": [
+          {
+            "value": "100+",
+            "label": "utilisateurs par semaine"
+          }
+        ]
+      },
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Vite"
+        ],
+        "backend": [
+          "NestJS",
+          "Python",
+          "FastAPI",
+          "Pydantic"
+        ],
+        "scoring": [
+          "Rubriques CECRL/DELF",
+          "NLP par règles",
+          "Difficulté adaptative"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Hub affiliés et agences",
@@ -172,8 +315,28 @@
         {
           "class": "devicon-react-plain",
           "name": "React Query"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "Next.js",
+          "TypeScript",
+          "React Query"
+        ],
+        "storage": [
+          "Firebase"
+        ],
+        "integrations": [
+          "Google APIs"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Immiland Foundation",
@@ -205,8 +368,26 @@
         {
           "class": "fab fa-stripe",
           "name": "Stripe"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Plateforme de réservation de consultations",
@@ -238,8 +419,28 @@
         {
           "class": "devicon-google-plain",
           "name": "Google Calendar"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "integrations": [
+          "Stripe",
+          "Google Calendar"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Calculateur CRS et tableau de bord",
@@ -267,8 +468,25 @@
         {
           "class": "devicon-nestjs-plain",
           "name": "NestJS"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Immiland Flow — achats clients",
@@ -300,8 +518,35 @@
         {
           "class": "fab fa-stripe",
           "name": "Stripe"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
         }
-      ]
+      ],
+      "impact_metrics": [
+        {
+          "id": "payment_revenue",
+          "value": "10 k$+",
+          "label": "revenu mensuel additionnel via les parcours de paiement"
+        }
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "integrations": [
+          "Stripe"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Application Management Immiland",
@@ -331,7 +576,19 @@
           "class": "devicon-tailwindcss-original",
           "name": "Tailwind"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React",
+          "Tailwind"
+        ],
+        "backend": [
+          "NestJS"
+        ],
+        "database": [
+          "PostgreSQL"
+        ]
+      }
     },
     {
       "title": "Cinerama",
@@ -357,7 +614,18 @@
           "class": "devicon-mongodb-plain",
           "name": "MongoDB"
         }
-      ]
+      ],
+      "tech_stack": {
+        "frontend": [
+          "React"
+        ],
+        "backend": [
+          "Express"
+        ],
+        "database": [
+          "MongoDB"
+        ]
+      }
     }
   ],
   "certificates": [
@@ -629,7 +897,8 @@
       "summary": "GPA 3.7 — fondamentaux CS, architecture logicielle et bases du machine learning.",
       "highlights": [
         "Licence en Computer Engineering (GPA 3.7).",
-        "Solides bases en algorithmes, OOP, bases de données et architecture logicielle."
+        "Solides bases en algorithmes, OOP, bases de données et architecture logicielle.",
+        "Machine learning sur des projets universitaires avec scikit-learn et TensorFlow."
       ],
       "technologies": [
         "Python",
@@ -637,8 +906,118 @@
         "C++",
         "Architecture logicielle",
         "Machine Learning",
+        "scikit-learn",
+        "TensorFlow",
         "Bases de données"
       ]
     }
-  ]
+  ],
+  "delivery_capabilities": {
+    "lead": "Comment un besoin encore flou devient un service maintenu en production — sans architecture confidentielle ni identifiants privés.",
+    "approach_title": "Approche de livraison",
+    "approach": [
+      {
+        "title": "Discovery produit avec les parties prenantes",
+        "body": "Clarifier des besoins ambigus, prioriser le travail à fort impact, et itérer de l'idée jusqu'au logiciel en production.",
+        "id": "discovery"
+      },
+      {
+        "title": "Conception système et API",
+        "body": "Concevoir des API REST, des modèles de données et des contrats par webhooks pour relier produit, paiements et opérations.",
+        "id": "system-api"
+      },
+      {
+        "title": "Livraison full-stack",
+        "body": "Livrer des fonctionnalités sur React/Next.js, Node.js/NestJS, Python/FastAPI et PostgreSQL, de l'implémentation au déploiement.",
+        "id": "full-stack"
+      },
+      {
+        "title": "Intégrations et automatisation",
+        "body": "Relier paiements, planification, communications et systèmes métier, et remplacer des processus manuels par des workflows automatisés.",
+        "id": "integrations"
+      },
+      {
+        "title": "Support en production",
+        "body": "Surveiller, diagnostiquer et maintenir les couches frontend, backend, intégrations et données après la mise en production.",
+        "id": "production-support"
+      }
+    ],
+    "systems_title": "Systèmes et intégrations",
+    "systems": [
+      {
+        "id": "payments",
+        "title": "Paiements",
+        "entries": [
+          "Stripe",
+          "Stripe Connect",
+          "PayU",
+          "PayPal"
+        ]
+      },
+      {
+        "id": "apis",
+        "title": "API et webhooks",
+        "entries": [
+          "API REST",
+          "Workflows pilotés par webhooks",
+          "Tâches planifiées / de fond"
+        ]
+      },
+      {
+        "id": "scheduling",
+        "title": "Planification et communications",
+        "entries": [
+          "Intégrations de planification",
+          "Automatisation des communications"
+        ]
+      },
+      {
+        "id": "data",
+        "title": "Données",
+        "entries": [
+          "PostgreSQL",
+          "Conception de schémas et migrations",
+          "Opérations SQL/JSONB"
+        ]
+      },
+      {
+        "id": "platforms",
+        "title": "Plateformes de livraison",
+        "entries": [
+          "Docker",
+          "GitHub Actions",
+          "Cloud Run",
+          "DigitalOcean"
+        ]
+      }
+    ],
+    "production_title": "Ingénierie de production",
+    "production": [
+      {
+        "title": "Livraison conteneurisée",
+        "body": "Services Docker pour des environnements de build et d'exécution cohérents.",
+        "id": "containers"
+      },
+      {
+        "title": "Contrôles automatisés",
+        "body": "CI/CD GitHub Actions avec build, tests, vérification de types et quality gates.",
+        "id": "checks"
+      },
+      {
+        "title": "Contrôles de santé et de readiness",
+        "body": "Endpoints de santé et de readiness utilisés dans les déploiements.",
+        "id": "health"
+      },
+      {
+        "title": "Monitoring et suivi d'erreurs",
+        "body": "Sentry et visibilité des erreurs après mise en production.",
+        "id": "monitoring"
+      },
+      {
+        "title": "Diagnostic en production",
+        "body": "Investiguer les incidents sur frontend, backend, intégrations et données dans les systèmes live.",
+        "id": "troubleshooting"
+      }
+    ]
+  }
 }
